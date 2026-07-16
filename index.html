@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Portal académico de ingeniería en movilidad urbana y transporte: clases, artículos, videos, libros y prácticas."
+    >
+    <meta name="theme-color" content="#006d5b">
+    <meta property="og:title" content="Ingeniería en Movilidad Urbana y Transporte">
+    <meta
+      property="og:description"
+      content="Clases, análisis y recursos técnicos para comprender y diseñar sistemas de movilidad."
+    >
+    <meta property="og:type" content="website">
+    <title>Ingeniería en Movilidad Urbana y Transporte</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <span class="brand-mark" aria-hidden="true">IM</span>
+          <span class="brand-copy">
+            <strong>Movilidad Urbana</strong>
+            <small>Ingeniería y transporte</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+          title="Abrir menú"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+
+        <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+          <a href="#clases">Clases</a>
+          <a href="#articulos">Artículos</a>
+          <a href="#recursos">Recursos</a>
+          <a href="#acerca">Acerca del portal</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid page-width">
+          <div class="hero-copy">
+            <p class="eyebrow">Portal académico y técnico</p>
+            <h1 id="hero-title">Ingeniería en Movilidad Urbana y Transporte</h1>
+            <p class="hero-intro">
+              Un espacio para estudiar, analizar y diseñar sistemas de movilidad con base en
+              ingeniería, datos y planeación urbana.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#clases">Explorar clases</a>
+              <a class="button button-secondary" href="#articulos">Consultar artículos</a>
+            </div>
+          </div>
+
+          <div class="network-panel">
+            <svg viewBox="0 0 520 330" role="img" aria-labelledby="network-title network-desc">
+              <title id="network-title">Red urbana multimodal</title>
+              <desc id="network-desc">
+                Diagrama de rutas conectadas mediante estaciones y nodos de transferencia.
+              </desc>
+              <g class="network-grid">
+                <path d="M40 65H480M40 165H480M40 265H480" />
+                <path d="M90 30V300M260 30V300M430 30V300" />
+              </g>
+              <path class="route route-a" d="M35 258C118 258 125 95 218 95S346 222 485 74" />
+              <path class="route route-b" d="M48 72C145 72 135 203 260 203S388 118 478 118" />
+              <path class="route route-c" d="M88 294V38" />
+              <g class="nodes">
+                <circle cx="88" cy="72" r="9" />
+                <circle cx="88" cy="258" r="9" />
+                <circle cx="218" cy="95" r="9" />
+                <circle cx="260" cy="203" r="11" />
+                <circle cx="430" cy="127" r="9" />
+                <circle cx="476" cy="118" r="9" />
+              </g>
+              <g class="network-labels">
+                <text x="104" y="65">Origen</text>
+                <text x="277" y="193">Transferencia</text>
+                <text x="388" y="106">Destino</text>
+              </g>
+            </svg>
+            <div class="panel-legend" aria-hidden="true">
+              <span><i class="legend-line line-a"></i>Tránsito</span>
+              <span><i class="legend-line line-b"></i>Transporte público</span>
+              <span><i class="legend-line line-c"></i>Movilidad activa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-area page-width" role="search">
+          <label for="site-search">Buscar en el portal</label>
+          <div class="search-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <input
+              id="site-search"
+              type="search"
+              placeholder="Ejemplo: tránsito, bases de datos, prácticas..."
+              autocomplete="off"
+            >
+          </div>
+          <p id="search-status" class="search-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="clases" class="section page-width" aria-labelledby="classes-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Formación</p>
+            <h2 id="classes-title">Clases de ingeniería</h2>
+          </div>
+          <p>Material organizado por áreas para acompañar cursos, ejercicios y proyectos.</p>
+        </div>
+
+        <div class="course-grid">
+          <article class="course-card searchable" data-search="ingeniería tránsito capacidad nivel servicio flujo vehicular">
+            <div class="course-visual visual-traffic" aria-hidden="true">
+              <svg viewBox="0 0 320 140">
+                <path class="diagram-road" d="M0 70H320" />
+                <path class="diagram-dash" d="M0 70H320" />
+                <rect x="54" y="43" width="48" height="20" rx="5" />
+                <rect x="188" y="78" width="52" height="20" rx="5" />
+                <path class="diagram-arrow" d="m263 52 19 0m-8-8 8 8-8 8" />
+              </svg>
+              <span>TRÁNSITO</span>
+            </div>
+            <div class="course-content">
+              <p class="course-code">IMT-01</p>
+              <h3>Ingeniería de tránsito</h3>
+              <p>Flujo vehicular, capacidad, niveles de servicio y control del tránsito.</p>
+              <span class="availability">Contenido en preparación</span>
+            </div>
+          </article>
+
+          <article class="course-card searchable" data-search="planeación transporte demanda origen destino redes escenarios">
+            <div class="course-visual visual-planning" aria-hidden="true">
+              <svg viewBox="0 0 320 140">
+                <path d="M42 108 99 42l61 55 61-65 58 76" />
+                <circle cx="42" cy="108" r="8" />
+                <circle cx="99" cy="42" r="8" />
+                <circle cx="160" cy="97" r="8" />
+                <circle cx="221" cy="32" r="8" />
+                <circle cx="279" cy="108" r="8" />
+              </svg>
+              <span>PLANEACIÓN</span>
+            </div>
+            <div class="course-content">
+              <p class="course-code">IMT-02</p>
+              <h3>Planeación del transporte</h3>
+              <p>Demanda, matrices origen-destino, redes y evaluación de escenarios.</p>
+              <span class="availability">Contenido en preparación</span>
+            </div>
+          </article>
+
+          <article class="course-card searchable" data-search="modelación simulación sistemas transporte calibración experimentos">
+            <div class="course-visual visual-simulation" aria-hidden="true">
+              <svg viewBox="0 0 320 140">
+                <path d="M30 107h36l25-61 35 74 31-51 32 30 28-64 31 72h62" />
+                <path class="diagram-axis" d="M30 25v95h260" />
+              </svg>
+              <span>SIMULACIÓN</span>
+            </div>
+            <div class="course-content">
+              <p class="course-code">IMT-03</p>
+              <h3>Modelación y simulación</h3>
+              <p>Representación de sistemas, calibración, experimentos y análisis de resultados.</p>
+              <span class="availability">Contenido en preparación</span>
+            </div>
+          </article>
+
+          <article class="course-card searchable" data-search="bases datos sql información geográfica movilidad consultas">
+            <div class="course-visual visual-data" aria-hidden="true">
+              <svg viewBox="0 0 320 140">
+                <ellipse cx="160" cy="35" rx="76" ry="21" />
+                <path d="M84 35v67c0 12 34 22 76 22s76-10 76-22V35" />
+                <path d="M84 68c0 12 34 22 76 22s76-10 76-22" />
+                <path d="M84 99c0 12 34 22 76 22s76-10 76-22" />
+              </svg>
+              <span>DATOS</span>
+            </div>
+            <div class="course-content">
+              <p class="course-code">IMT-04</p>
+              <h3>Bases de datos</h3>
+              <p>Diseño relacional, SQL y gestión de información aplicada a la movilidad.</p>
+              <span class="availability">Contenido en preparación</span>
+            </div>
+          </article>
+
+          <article class="course-card searchable" data-search="programación algoritmos python análisis datos automatización transporte">
+            <div class="course-visual visual-code" aria-hidden="true">
+              <svg viewBox="0 0 320 140">
+                <path d="m125 38-47 32 47 32M195 38l47 32-47 32M179 27l-37 86" />
+              </svg>
+              <span>PROGRAMACIÓN</span>
+            </div>
+            <div class="course-content">
+              <p class="course-code">IMT-05</p>
+              <h3>Programación aplicada</h3>
+              <p>Algoritmos, análisis de datos y automatización para problemas de transporte.</p>
+              <span class="availability">Contenido en preparación</span>
+            </div>
+          </article>
+
+          <article class="course-card searchable" data-search="movilidad urbana sostenible peatón bicicleta seguridad vial accesibilidad">
+            <div class="course-visual visual-urban" aria-hidden="true">
+              <svg viewBox="0 0 320 140">
+                <path d="M26 116h268M48 116V72h45v44M111 116V39h59v77M188 116V62h35v54M241 116V28h46v88" />
+                <path d="M131 59h19M131 78h19M131 97h19M258 49h13M258 69h13M258 89h13" />
+              </svg>
+              <span>CIUDAD</span>
+            </div>
+            <div class="course-content">
+              <p class="course-code">IMT-06</p>
+              <h3>Movilidad urbana sostenible</h3>
+              <p>Accesibilidad, movilidad activa, seguridad vial y diseño centrado en las personas.</p>
+              <span class="availability">Contenido en preparación</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="articulos" class="section section-band" aria-labelledby="articles-title">
+        <div class="page-width">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Análisis</p>
+              <h2 id="articles-title">Artículos de ingeniería</h2>
+            </div>
+            <p>Notas breves para conectar conceptos técnicos con decisiones urbanas.</p>
+          </div>
+
+          <div class="article-grid">
+            <article class="article-card searchable" data-search="capacidad vial congestión tránsito demanda inducida">
+              <p class="article-meta"><span>Tránsito</span> · Lectura de 6 min</p>
+              <h3>La capacidad vial no es una cifra aislada</h3>
+              <p>
+                Una introducción a la relación entre capacidad, demanda, operación y calidad del servicio.
+              </p>
+              <details>
+                <summary>Leer resumen</summary>
+                <p>
+                  Evaluar una vía exige observar variaciones horarias, composición vehicular,
+                  intersecciones y comportamiento de los usuarios. El análisis adquiere valor cuando
+                  ayuda a comparar alternativas y no solo a reportar un valor máximo.
+                </p>
+              </details>
+            </article>
+
+            <article class="article-card searchable" data-search="datos movilidad indicadores decisiones calidad información">
+              <p class="article-meta"><span>Datos</span> · Lectura de 5 min</p>
+              <h3>Datos útiles para decisiones de movilidad</h3>
+              <p>
+                Qué distingue a un conjunto de datos abundante de uno verdaderamente aprovechable.
+              </p>
+              <details>
+                <summary>Leer resumen</summary>
+                <p>
+                  Los datos deben responder una pregunta concreta y conservar trazabilidad espacial,
+                  temporal y metodológica. Sin estas condiciones, incluso una gran base puede producir
+                  indicadores difíciles de interpretar o comparar.
+                </p>
+              </details>
+            </article>
+
+            <article class="article-card searchable" data-search="accesibilidad movilidad urbana tiempo viaje proximidad transporte">
+              <p class="article-meta"><span>Planeación</span> · Lectura de 7 min</p>
+              <h3>De la velocidad a la accesibilidad</h3>
+              <p>
+                Por qué acercar oportunidades puede ser más importante que aumentar velocidades.
+              </p>
+              <details>
+                <summary>Leer resumen</summary>
+                <p>
+                  La accesibilidad relaciona usos del suelo, redes, costos y tiempo. Este enfoque permite
+                  evaluar cuántas oportunidades puede alcanzar una persona y visibiliza diferencias que
+                  un promedio general de velocidad suele ocultar.
+                </p>
+              </details>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="recursos" class="section page-width" aria-labelledby="resources-title">
+        <div class="section-heading resources-heading">
+          <div>
+            <p class="eyebrow">Biblioteca</p>
+            <h2 id="resources-title">Recursos para estudiar y practicar</h2>
+          </div>
+          <p>Videos, documentos y actividades que se incorporarán de forma progresiva.</p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filtrar recursos">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter-button" type="button" data-filter="video" aria-pressed="false">Videos</button>
+          <button class="filter-button" type="button" data-filter="pdf" aria-pressed="false">Libros y PDF</button>
+          <button class="filter-button" type="button" data-filter="practice" aria-pressed="false">Prácticas</button>
+        </div>
+
+        <div class="resource-grid">
+          <article class="resource-card searchable" data-category="video" data-search="video fundamentos flujo vehicular youtube tránsito">
+            <div class="resource-icon video-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 7 8 5-8 5Z" /></svg>
+            </div>
+            <div>
+              <p class="resource-type">Video</p>
+              <h3>Fundamentos del flujo vehicular</h3>
+              <p>Serie introductoria para acompañar la clase de Ingeniería de tránsito.</p>
+              <span class="availability">En preparación</span>
+            </div>
+          </article>
+
+          <article class="resource-card searchable" data-category="video" data-search="video redes transporte modelación rutas youtube">
+            <div class="resource-icon video-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 7 8 5-8 5Z" /></svg>
+            </div>
+            <div>
+              <p class="resource-type">Video</p>
+              <h3>Introducción a redes de transporte</h3>
+              <p>Nodos, arcos, rutas y costos representados mediante modelos de red.</p>
+              <span class="availability">En preparación</span>
+            </div>
+          </article>
+
+          <article class="resource-card searchable" data-category="pdf" data-search="libro pdf manual capacidad vial ingeniería tránsito">
+            <div class="resource-icon pdf-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6Z" /><path d="M14 3v5h4M9 13h6M9 17h6" /></svg>
+            </div>
+            <div>
+              <p class="resource-type">Documento PDF</p>
+              <h3>Lecturas de ingeniería de tránsito</h3>
+              <p>Selección de referencias técnicas y documentos de libre consulta.</p>
+              <span class="availability">En preparación</span>
+            </div>
+          </article>
+
+          <article class="resource-card searchable" data-category="pdf" data-search="libro pdf movilidad urbana planeación accesibilidad">
+            <div class="resource-icon pdf-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6Z" /><path d="M14 3v5h4M9 13h6M9 17h6" /></svg>
+            </div>
+            <div>
+              <p class="resource-type">Documento PDF</p>
+              <h3>Biblioteca de movilidad urbana</h3>
+              <p>Guías, reportes y textos para analizar transporte y territorio.</p>
+              <span class="availability">En preparación</span>
+            </div>
+          </article>
+
+          <article class="resource-card searchable" data-category="practice" data-search="práctica ejercicio aforo vehicular tránsito campo">
+            <div class="resource-icon practice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 5h10v16H5V9Z" /><path d="M9 5v4H5M9 13h6M9 17h6" /></svg>
+            </div>
+            <div>
+              <p class="resource-type">Práctica</p>
+              <h3>Aforo y composición vehicular</h3>
+              <p>Actividad de campo, formato de captura y guía para procesar resultados.</p>
+              <span class="availability">En preparación</span>
+            </div>
+          </article>
+
+          <article class="resource-card searchable" data-category="practice" data-search="práctica ejercicio sql base datos movilidad consultas">
+            <div class="resource-icon practice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 5h10v16H5V9Z" /><path d="M9 5v4H5M9 13h6M9 17h6" /></svg>
+            </div>
+            <div>
+              <p class="resource-type">Práctica</p>
+              <h3>Consultas SQL para movilidad</h3>
+              <p>Ejercicios sobre viajes, estaciones, rutas y registros operativos.</p>
+              <span class="availability">En preparación</span>
+            </div>
+          </article>
+        </div>
+
+        <p id="no-results" class="no-results" hidden>
+          No se encontraron contenidos con esos criterios.
+        </p>
+      </section>
+
+      <section id="acerca" class="about-section" aria-labelledby="about-title">
+        <div class="page-width about-grid">
+          <div>
+            <p class="eyebrow">Propósito</p>
+            <h2 id="about-title">Conectar teoría, datos y práctica</h2>
+          </div>
+          <p>
+            Este portal reúne materiales para la enseñanza y divulgación de la ingeniería en
+            movilidad urbana y transporte. Su estructura crecerá con nuevas clases, artículos,
+            ejercicios, códigos y referencias técnicas.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width footer-inner">
+        <p><strong>Ingeniería en Movilidad Urbana y Transporte</strong></p>
+        <p>© <span id="current-year">2026</span> · Portal académico</p>
+      </div>
+    </footer>
+  </body>
+</html>
