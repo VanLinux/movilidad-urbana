@@ -21,6 +21,11 @@ for (const [ok, label] of checks) {
 }
 
 await stat(join(root, "assets", "media", "hero-intercambio.webp"));
+for (const file of await readdir(join(root, "assets", "media"))) {
+  if (file.endsWith(".webp") && (await stat(join(root, "assets", "media", file))).size === 0) {
+    throw new Error(`Imagen vacía: ${file}`);
+  }
+}
 
 const htmlFiles = [];
 async function collectHtml(directory) {

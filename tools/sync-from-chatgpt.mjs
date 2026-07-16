@@ -122,7 +122,7 @@ async function prepareMain(html, pathname) {
   const main = $("main").first();
   if (!main.length) throw new Error(`No se encontró <main> en ${pathname}`);
 
-  main.find("script, style").remove();
+  main.find("script, style, .site-header, .site-footer").remove();
   main.find("a").each((_, element) => {
     const anchor = $(element);
     const href = anchor.attr("href");
@@ -207,5 +207,10 @@ const routes = [...coreRoutes, ...articleRoutes];
 for (const route of routes) await buildRoute(route);
 for (const file of await readdir(join(root, "assets", "media"))) {
   if (file.endsWith(".png")) await unlink(join(root, "assets", "media", file));
+}
+for (const file of await readdir(join(root, "assets", "media"))) {
+  if (file.endsWith(".webp") && (await stat(join(root, "assets", "media", file))).size === 0) {
+    throw new Error(`La imagen optimizada quedó vacía: ${file}`);
+  }
 }
 console.log(`\n${routes.length} páginas generadas (${articleRoutes.length} artículos).`);
