@@ -1,0 +1,13 @@
+{
+  "name": "movilidad-urbana",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "sync": "node tools/sync-from-chatgpt.mjs",
+    "check": "node tools/check-site.mjs"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2"
+  }
+}

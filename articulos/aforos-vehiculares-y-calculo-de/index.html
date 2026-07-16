@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Los conteos de tráfico vehicular (aforos vehiculares) se refieren al proceso de medir y registrar el flujo de vehículos en una determinada área o carretera durante un período de tiempo específico. Estas mediciones son fundamentales para comprender y gestion…">
+    <meta name="theme-color" content="#111111">
+    <title>Aforos vehiculares y cálculo de confiabilidad | Ingeniería en Movilidad</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <link rel="stylesheet" href="/movilidad-urbana/styles.css">
+    <script src="/movilidad-urbana/script.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="/movilidad-urbana/" aria-label="Ir al inicio">
+        <span class="brand-code">HABG/</span>
+        <span>movilidad urbana</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span>menú</span><span aria-hidden="true">+</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal"><a href="/movilidad-urbana/">Inicio</a><a href="/movilidad-urbana/articulos/" aria-current="page">Artículos</a><a href="/movilidad-urbana/clases/">Clases</a><a href="/movilidad-urbana/videos/">Videos</a><a href="/movilidad-urbana/biblioteca/">Biblioteca</a><a href="/movilidad-urbana/software/">Software</a></nav>
+    </header>
+    <div id="contenido"><main class="article-page"><header class="article-header page-shell"><a href="/movilidad-urbana/articulos/" class="back-link">← Todos los artículos</a><div class="tag-row"><span>Transporte</span><span>Tránsito</span><span>Aforo</span><span>Urbanismo</span></div><h1>Aforos vehiculares y cálculo de confiabilidad</h1><div class="article-byline"><span>Por <!-- -->Héctor Benítez García</span><time datetime="2023-12-11T06:44:00.009Z">11 de diciembre de 2023</time><span>25<!-- --> min de lectura</span></div></header><article class="article-content prose-content"><p><span><span>&nbsp;&nbsp; &nbsp;</span>Los conteos de tráfico vehicular (aforos vehiculares) se refieren al proceso de medir y registrar el flujo de vehículos en una determinada área o carretera durante un período de tiempo específico. Estas mediciones son fundamentales para comprender y gestionar el tráfico, planificar infraestructuras viales, mejorar la seguridad en las carreteras y tomar decisiones informadas en el campo del transporte.&nbsp;</span><span>La historia de los conteos de tráfico vehicular tiene sus raíces en la creciente complejidad del tráfico y la necesidad de obtener datos precisos para hacer frente a los desafíos asociados con el aumento del número de vehículos en las carreteras. A lo largo del tiempo, la tecnología utilizada para realizar estos conteos ha evolucionado notablemente.</span></p><div><div><span>La implementación de los primeros aforos vehiculares se remonta a principios del siglo XX. La necesidad de medir y entender el tráfico surgió con el aumento del número de automóviles en las carreteras. A continuación, se destacan algunos hitos relevantes en la historia de los aforos vehiculares:</span></div><div><ol><li><span><b>Década de 1920:</b> Con el crecimiento del parque automotor, particularmente en países como Estados Unidos, se reconoció la importancia de recopilar datos sobre el flujo de vehículos para la planificación del tráfico y la gestión de carreteras. En esta época, se realizaron algunos estudios pioneros utilizando métodos manuales, como contar vehículos por observadores en ubicaciones estratégicas.</span></li><li><span><b>Década de 1930:</b> Se introdujeron métodos más sistemáticos para realizar aforos. Por ejemplo, en Estados Unidos, se implementaron sistemas de cables en las carreteras para contar vehículos mediante la interrupción del cable al pasar sobre él.</span></li><li><span><b>Década de 1950: </b>La tecnología de bucle inductivo comenzó a utilizarse de manera más extendida. Los bucles inductivos, que detectan vehículos mediante cambios en la inductancia eléctrica, se convirtieron en una herramienta común para realizar aforos y controlar semáforos.</span></li><li><span><b>Década de 1970</b>: Con el avance de la tecnología informática, se introdujeron sistemas más automatizados y digitales para el conteo de vehículos. Aparecieron los primeros dispositivos electrónicos que facilitaron la recopilación y el procesamiento de datos de tráfico.</span></li><li><span><b>Década de 1990:&nbsp;</b>Se produjo una evolución significativa con la llegada de tecnologías más avanzadas, como cámaras de video, radares y sistemas de reconocimiento de matrículas. Estas tecnologías permitieron una mayor precisión en el conteo y ofrecieron la capacidad de recopilar datos adicionales, como la velocidad y el tipo de vehículo.</span></li><li><span><b>De 2010 en adelante: </b>Hoy en día ya se están utilizando técnicas de reconocimiento digital de imágenes por medio de inteligencia artificial, algo muy novedoso y funcional, ya que permite reconocer el tipo de vehículo he incluso capta mas información como el modelo, color y en algunos caso hasta incluso la cantidad de pasajeros que circulan.</span></li></ol></div><div><h4><span>Técnicas para aforos vehiculares:</span></h4><div><ol><li><span>Manual: En sus inicios, los aforos vehiculares eran realizados manualmente por observadores que registraban el número y tipo de vehículos que pasaban por una ubicación específica en una hoja con un formato especial lista para separar los tipos de vehículos y también con la ayuda de "cuenta bultos" que permiten hacer conteos muy rápidos. Este método, aunque básico, proporcionaba información valiosa.</span><br></li><ol><li><span>Ventajas: Se tiene perfecta claridad de lo que se está contando, ya que nosotros de manera visual sabremos donde colocar la información.</span></li><li><span>Desventajas:&nbsp;Procesar la información es muy laborioso, ya que se debe pasar todo a hojas de cálculo, también es posible que no seamos tan precisos al hacer las anotaciones si estamos contando demasiados vehículos (llega a pasar que luego no entiendes ni tu propia letra) y cuando se hacen muchos conteos, poner en ceros el contador cada 15 minutos llega a ser algo complicado.</span></li></ol><ol><ol></ol></ol><li><span>Aplicaciones en teléfono inteligentes: Con el paso del tiempo los <i>smartphones </i>se han convertido en herramientas de trabajo, y para este caso son muy útiles, yo personalmente he cambiado mi método de aforo, pasando del registro manual a usar este tipo de apoyo. Ya que de esta manera es más sencillo y rápido hacer el conteo de cualquier vehículo.</span></li><ol><li><span>Ventajas: Se hacen los conteos con gran rapidez y sin preocuparse de los intervalos, ya que la aplicación lo hace de forma automática, también algo importante es que la información la convierte de manera directa a .csv y eso ahorra muchísimo tiempo al no tener que pasar a mano toda la información a hojas de cálculo.&nbsp;</span></li><li><span>Desventajas: Al depender de la tecnología, se puede agotar la batería, o puede haber algún fallo donde se pierda la información.<br><div class="separator"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjD40u2FnDZ8XnUCkQTb1AIWSv2oKoNQx4hUicw852rZpa1cE8iUef5K7Z4f08ygS-dRYIDQnG0Xsj5M9bs_5rWZXMytCwzhT7gelA5kbEVotoHgcOKcbZ1GCKp-sjq4JlQlQuPRSm1zwmwMlb8pwYZFZUZ96ltfbMDluCnruniffnRQAokKGN2DhwwXz3h" target="_blank" rel="noreferrer"><img alt="" data-original-height="1280" data-original-width="720" src="https://blogger.googleusercontent.com/img/a/AVvXsEjD40u2FnDZ8XnUCkQTb1AIWSv2oKoNQx4hUicw852rZpa1cE8iUef5K7Z4f08ygS-dRYIDQnG0Xsj5M9bs_5rWZXMytCwzhT7gelA5kbEVotoHgcOKcbZ1GCKp-sjq4JlQlQuPRSm1zwmwMlb8pwYZFZUZ96ltfbMDluCnruniffnRQAokKGN2DhwwXz3h" loading="lazy" decoding="async"></a></div><br></span></li></ol><li><div><span>Sensores mecánicos y electromecánicos: Con el tiempo, se introdujeron sensores mecánicos y electromecánicos que detectaban la presión de los neumáticos o el peso de los vehículos para registrar su paso. Estos sistemas eran más eficientes que los métodos manuales, pero aún requerían mantenimiento constante. Hoy en día es una forma muy utilizada y cada vez mas eficiente.</span></div></li><ol><li><span>Ventajas: Se puede dejar el sistema por horas y el sólo hará los conteos, también procesa la información de manera automática y entrega un archivo .csv detallado.</span></li><li><span>Desventajas: Se debe calibrar muy bien el dispositivo y llega a tener fallas en la interpretación de vehículos con mas de dos ejes, y claro, también se depende de las baterías y se puede perder la información.</span></li></ol><li><div><span><div class="separator"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_2fOV1hW8XudiRQkZd8_ymMYRrv5_oXH7pIM3hF5lWjqh9H0JW9Nzlzfq2GiIcnMYWn2R_4LRPX1ormP1d7ho1JwMWC0MNCepWm-f0zu4nV5y0GPZpJR-bsRnUjksXEyP28PCvXiJ5OnV9J_bViBRDhGQhanpKQ4SlCrBpa4RvwZFYDxVqsUN7YI1xd1d/s300/Aforo%20mecanico.jpeg" target="_blank" rel="noreferrer"><img data-original-height="168" data-original-width="300" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_2fOV1hW8XudiRQkZd8_ymMYRrv5_oXH7pIM3hF5lWjqh9H0JW9Nzlzfq2GiIcnMYWn2R_4LRPX1ormP1d7ho1JwMWC0MNCepWm-f0zu4nV5y0GPZpJR-bsRnUjksXEyP28PCvXiJ5OnV9J_bViBRDhGQhanpKQ4SlCrBpa4RvwZFYDxVqsUN7YI1xd1d/s1600/Aforo%20mecanico.jpeg" loading="lazy" decoding="async"></a></div>Tecnología de bucle inductivo: A mediados del siglo XX, se implementaron los bucles inductivos, que son espirales de alambre enterradas en el pavimento. Estos detectan la presencia de vehículos mediante cambios en la inductancia eléctrica y se utilizan comúnmente en semáforos y sistemas de gestión de tráfico.</span></div></li><div class="separator"></div><div class="separator"><span id="docs-internal-guid-426c6220-7fff-1498-7cb5-2b4fea8d116a"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEg1tV8nF6aQGzqrXkpn-2dzMSGVhxOkjP-5ifXwThbuI_P9Nb5xwKhtyKFAHHHOMbdjyDQOrQAA9_3nEpvC0hGQvfFcLJKN1cz0WVWX7d555Y3jSR5zFhqgN2LfgZPDo6lVdUa7Gd2dBJxQovYQwJ3qCON2HM-VnYc5OR-d9pVfZN9zdbyW9GmmE_5laR8O" loading="lazy" decoding="async"></span></div><ol><li><span>Ventajas: Prácticamente no tiene problemas con el reconocimiento de cualquier vehículo y entrega un .csv muy detallado. Se pueden hacer aforos de 24 horas seguidas por semanas, incluso meses.</span></li><li><span>Desventajas: Es invasivo, se requiere cortar el pavimento y la instalación no es sencilla, y claro, como en los casos anteriores, los mismos problemas de la dependencia tecnológica.<br><br></span></li></ol><li><span>Sensores avanzados y tecnología digital: Con el avance de la tecnología digital, se introdujeron sensores más avanzados, como cámaras de video, radares y sistemas de reconocimiento de matrículas. Estos permiten una recopilación de datos más precisa y pueden proporcionar información adicional, como la velocidad y el tipo de vehículo.<br></span></li><div class="separator"><span id="docs-internal-guid-1231cd89-7fff-d042-e7ab-617cfded53b3"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEhzlQoY3v8BobGW6A7wYtrRNfFnRCT0EVWpannIcn2v0H77YhnttgD3bOZIt31HWaGqP6YaQDnf_7kofXHAntnxvkGSlLjyGXHotaHH6X4DyEIDfTien-l2MdDFFcI8elDEifF9LNCtb6MMZtpjebsia7u3dtiSgx6DpgBpT9ML2NQHEMQ2_WVu2n2PCv6_" loading="lazy" decoding="async"></span></div><ol><li><span>Ventajas: Permiten realizar aforos mucho más detallados, analizando el color de los autos, el número de placa etc.</span></li><li><span>Desventaja: Aún no se tiene la precisión que se desea, y se llegan a tener algunos fallos por la superposición de los autos a "ojos" de la cámara, por los que a veces arroja datos imprecisos.<br></span></li></ol><li><span>Sistemas integrados, análisis de Big Data e inteligencia artificial: En la actualidad, los aforos vehiculares a menudo forman parte de sistemas de gestión de tráfico más amplios. Los datos recopilados se pueden analizar utilizando herramientas de Big Data para obtener <i>insights</i> más profundos sobre los patrones de tráfico y facilitar la toma de decisiones en el diseño de infraestructuras y la gestión del tráfico.</span><div></div></li></ol><div><span></span></div><div class="separator"><span><span></span></span></div><span></span><div class="separator"><span><span></span></span></div><span></span><div><span><div class="separator"><object class="BLOG_video_class" contentid="1ee2ef1f5b44facc" id="BLOG_video-1ee2ef1f5b44facc"></object></div><br><span><br></span></span></div><span><br><b>Utilidad de los aforos vehiculares:</b></span></div><div><span><b>Planificación vial:</b> Los datos de aforos son esenciales para planificar y diseñar infraestructuras viales eficientes que puedan manejar el flujo de vehículos de manera adecuada.<br><b>Gestión del tráfico:</b> Proporcionan información en tiempo real sobre la congestión, permitiendo la implementación de estrategias para mejorar la fluidez del tráfico y reducir los tiempos de viaje.<br><b>Seguridad vial:</b> Ayudan a identificar áreas de riesgo y a implementar medidas de seguridad para prevenir accidentes de tráfico.<br><b>Toma de decisiones informada:</b> Los datos de aforos respaldan la toma de decisiones informada en políticas de transporte y planificación urbana.</span><span><span><br><h2><span>¿Cómo se realiza un aforo vehicular?</span></h2></span></span><div><span>El éxito de un aforo radica en la elección adecuada del tipo y técnica empleados. Según las directrices del Manual de Ingeniería de Tránsito de Oppenlander, la versión más simple del aforo manual solo requiere la participación de una persona y el uso de una hoja de campo. Un solo individuo puede gestionar entre 6 y 12 movimientos direccionales aplicando las siguientes recomendaciones.</span></div><div><span><ol><li><span>Siempre es buena idea hacer un pre-aforo para conocer el terreno y decidir dónde colocar al equipo de apoyo, en caso de necesitarlo</span></li><li><span>Es esencial entender las maniobras de los vehículos para llegar preparados con las hojas de campo necesarias. Identificar vehículos que hacen movimientos prohibidos regularmente es clave para decidir si incluirlos en el aforo y cómo registrarlos en las hojas de campo.</span></li><li><span>Llevar algún tipo de contador facilitará el trabajo, pero si no lo tienes, ¡con un lápiz y la hoja de campo necesaria es suficiente para hacer el conteo!</span></li><li><span>Con el tiempo, cada uno desarrollará su propia metodología para hacer el aforo con precisión, pero, aunque suene obvio, ¡practicar el conteo durante el pre-aforo es recomendable! También sirve para estimar si necesitarás ayuda en algún momento o en algún acceso específico.</span></li><li><span>Estar preparado para mantener la concentración durante todo el aforo es clave. ¡Ve al baño antes de empezar, asegúrate de estar bien hidratado y come algo! También es recomendable llevar lentes oscuros o gorra si el aforo es en un horario con sol intenso.</span></li></ol><h3>Días y horarios para realizar aforos vehiculares.</h3><div><p data-end="574" data-start="144">No se debe aforar cualquier día, debido a que buscamos obtener datos lo más verídicos posibles. En primera instancia, hay que comenzar por elegir el mes adecuado. En un trabajo realizado por la UNAM y el INEGI, donde establecieron formatos y obtuvieron información sobre encuestas origen–destino, se menciona que el mejor mes para aforar es <span data-end="496" data-start="485">octubre</span>, debido a que en este mes (por lo menos en México) hay menos días feriados.</p>
+<p data-end="834" data-start="576">Esto es importante, ya que realizar un aforo cerca de días en los que habrá descansos o fines de semana largos puede generar errores en los datos, debido a que la gente no se mueve hacia sus lugares de origen habituales y sus destinos pueden ser inciertos.</p>
+<p data-end="1186" data-start="836">Con respecto a los días, lo recomendable es que <span data-end="911" data-start="884">no sea lunes ni viernes</span>, ya que esos días puede suceder que las personas regresen de un fin de semana fuera de la ciudad o tengan un origen distinto al habitual. El viernes, por otro lado, muchas personas suelen salir de la ciudad o desplazarse hacia lugares que solo frecuentan en fin de semana.</p>
+<p data-end="1372" data-start="1188">Tampoco se recomienda aforar los <span data-end="1248" data-start="1221">sábados ni los domingos</span>, porque en esos días la mayoría de las personas no sigue una rutina establecida y sus desplazamientos son muy aleatorios.</p>
+<p data-end="1726" data-start="1374">En cuanto al <span data-end="1398" data-start="1387">horario</span>, la situación es un poco diferente. Aquí ya se debe comenzar con el aforo para poder determinar el horario que servirá para el análisis. Tanto <span data-end="1557" data-start="1542">Cal y Mayor</span> como <span data-end="1578" data-start="1563">Oppenlander</span> establecen que los estudios deben realizarse en los <span data-end="1667" data-start="1631">horarios de máxima demanda (HMD)</span> o <span data-end="1684" data-start="1670">horas pico</span>, y este horario se obtiene de dos formas:</p><p data-end="1726" data-start="1374"></p><ol><li>Si el aforador tiene un amplio conocimiento de la vía o es residente de la zona, seguramente ya conoce el horario en que hay mayor volumen vehicular.</li><li>Se realiza un aforo de&nbsp;14 horas continuas, normalmente de 6 de la mañana a 8 de la noche, y ahí se determina el HMD.</li></ol><p></p><p data-end="595" data-start="399">Estas dos formas tienen desventajas: la primera conlleva que se deba confiar en el criterio del aforador, y la segunda es muy desgastante al tratarse de un aforo manual de tantas horas seguidas. Para cualquiera de los dos casos, lo recomendable es realizar el aforo durante tres días, de martes a jueves.</p><h4>Pasos para aforar</h4></div><div><p data-end="295" data-start="143">Los siguientes pasos los he desarrollado conforme a mi experiencia, así que no es obligatorio hacerlo de esta manera; es únicamente una recomendación.</p>
+<p data-end="513" data-start="297"></p><ul><li><span data-end="316" data-start="297">Reconocimiento:</span> <b>E</b>l coordinador del aforo irá al lugar para identificar los movimientos y maniobras que presenta la vialidad. Observará el número de accesos y semáforos de la zona, realizando un boceto en papel.</li><li><span data-end="528" data-start="515">Preaforo:</span> El coordinador creará un mapa de la zona, o utilizará alguno existente, y marcará los movimientos y maniobras que le interesa aforar. Junto con el equipo que realizará el aforo, determinará los puntos en los que se colocará cada persona, de modo que todos sepan con precisión qué movimientos deberán considerar. Esto es de gran utilidad, ya que así cada integrante conoce perfectamente su función y no será necesario dar indicaciones el mismo día del aforo.</li><li><span data-end="1000" data-start="990">Aforo:</span> Este es el día en que se llevará a cabo el conteo. No debe faltar ningún integrante para que todo salga a la perfección. Se sincronizarán los relojes y, diez minutos antes de la hora de inicio, todos deberán estar en sus posiciones. El conteo comenzará a la hora indicada. Si el punto asignado cuenta con un semáforo, el conteo deberá iniciar cuando el semáforo esté en verde y concluir cuando cambie a rojo. Los intervalos recomendados son de <span data-end="1461" data-start="1447">15 minutos</span>, es decir, cada 15 minutos se reinicia la cuenta y se cierra un ciclo de conteo.</li><li><span data-end="1573" data-start="1546">Procesamiento de datos:</span> Una vez terminado el aforo, todos los integrantes deberán reunirse para detallar sus resultados, de modo que el coordinador los registre en la hoja de cálculo. Esta parte es muy importante, ya que si falta algún integrante, puede resultar complicado interpretar sus anotaciones y se corre el riesgo de cometer errores.</li></ul><p></p>
+</div><h4>Mas de un par de horas de máxima demanda o diferentes HMD por dirección</h4><div><p data-end="409" data-start="129">Puede suceder que se presenten varios picos similares en diferentes horarios, por ejemplo, de 6 a 8 de la mañana y de 18 a 20 horas. También es posible que una misma vía tenga diferentes horas pico según el sentido. Esto significa que cada vía posee su propio sentido operativo.</p>
+<p data-end="796" data-start="411">En estos casos, no se deben combinar los análisis de capacidad ni de nivel de servicio; <span data-end="580" data-start="499">cada sentido debe analizarse de manera independiente en su respectivo horario</span>.<br data-end="584" data-start="581">
+Y ojo aquí: en caso de que las direcciones de la vialidad no estén separadas por un camellón, será necesario realizar <span data-end="726" data-start="702">cálculos adicionales</span> que no detallaré en este artículo, ya que corresponden a otro tema.</p></div><div><br></div><div><table>
+<thead>
+<tr>
+<th>Tipo de análisis</th>
+<th>Se analizan por separado o juntos</th>
+<th>Aplicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Análisis operativo (capacidad, LOS, semáforos)</td>
+<td>🔹 Por sentido</td>
+<td>Cada dirección se evalúa con su propio HMD (ej. HCM, Visum, Synchro)</td>
+</tr>
+<tr>
+<td>Análisis de planeación o simulación macro (Visum, TransCAD)</td>
+<td>🔹 Ambos sentidos integrados</td>
+<td>Se usa un flujo diario total (veh/día) con distribución por sentido</td>
+</tr>
+<tr>
+<td>Diseño de secciones (número de carriles, medianas)</td>
+<td>🔹 Por sentido, pero considerando el balance total</td>
+<td>Puede implicar carriles reversibles o desbalance de secciones</td>
+</tr>
+<tr>
+<td>Evaluación económica o ambiental</td>
+<td>🔹 Se suman resultados por sentido</td>
+<td>Para estimar emisiones o beneficios globales</td>
+</tr>
+</tbody></table></div></span></div><div><h4><span>Formatos y hojas de campo</span></h4></div><div><span>    Desde mi experiencia, puedo afirmar que una parte fundamental para alcanzar el éxito en un aforo efectivo radica en el empleo de hojas de campo bien estructuradas. Después de efectuar observaciones de vehículos o peatones, es imperativo capturar la información en intervalos específicos. Al contar con un lugar idóneo para realizar este proceso de manera ágil y precisa, se logrará reducir la incidencia de errores de manera considerable. La adecuada disposición de un espacio apropiado para el registro sistemático contribuirá significativamente a la optimización de los resultados obtenidos durante el aforo.<br><br>Aquí les comparto las hojas de campo que he utilizado en clase de Ingeniería de Tránsito, yo las hice todas, copiando de manuales especializados y principalmente del manual de estudios de ingeniería de tránsito, decidí que en lugar de sacar copias del libro se usaran unas más personalizadas y mejor definidas. Esperando sean de utilidad, <br><br><br><a href="https://drive.google.com/drive/folders/1FE5x9VmgBY372LMv6_ZckpcNkzY5hgKJ?usp=sharing" target="_blank" rel="noreferrer">Hojas de campo de aforo</a></span></div><div><span><br></span></div><div><h3><span>Procesamiento de datos</span></h3><div><p data-end="360" data-start="130"><span>Para el procesamiento de datos, lo más importante es el <span data-end="247" data-start="186">formato que uses para ingresar la información recolectada</span>. Esto es de suma importancia, porque después no siempre resulta fácil encontrar los datos de manera detallada.</span></p>
+<p data-end="431" data-start="362"><span>Normalmente, existen <span data-end="408" data-start="383">dos tipos de formatos</span> que puedes utilizar:</span></p>
+<p data-end="732" data-start="433"></p><ul><li><span><span data-end="452" data-start="433">Formato simple:&nbsp;</span>Este formato no es más que una tabla con la información clasificada de forma lineal y sin ningún tipo de “estética”. A mí, en lo personal, es el formato que más me gusta, porque permite <span data-end="673" data-start="641">filtrar fácilmente los datos</span> y luego convertirlos sin problema en una tabla dinámica.</span></li><li><span><span data-end="755" data-start="734">Formato complejo:</span>Este formato es el más común en internet. Se caracteriza por tener <span data-end="857" data-start="825">dibujos, recuadros y colores</span>, con la información bien acomodada, pero con una estructura más rígida. Es cierto que resulta más agradable a la vista, pero tiene la desventaja de que <span data-end="1061" data-start="1010">no permite filtrar los datos de manera sencilla</span>, y además puede ser <span data-end="1098" data-start="1082">más delicado</span> cuando se intenta agregar otra celda, fila o columna.</span></li></ul><p></p>
+<p data-end="1244" data-start="1156"><span>No importa el formato que elijas; lo importante es que <span data-end="1241" data-start="1211">te sientas cómodo usándolo</span>.</span></p>
+<p data-end="1453" data-start="1246"><span>Otro detalle importante es la <span data-end="1330" data-start="1276">información que debe contener cada hoja de cálculo</span>. Puedes personalizarla según los datos que necesites visualizar, pero yo te recomiendo incluir los siguientes elementos:</span></p></div><div><ul><li><span><b>Formato de conteo</b></span></li></ul><div><table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Intervalo</th>
+<th>Movimiento</th>
+<th>Automóviles</th>
+<th>Motos</th>
+<th>Camiones</th>
+<th>Autobuses</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Martes</td>
+<td>6:00–6:15</td>
+<td>Izquierda</td>
+<td>25</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>31</td>
+</tr>
+<tr>
+<td>Martes</td>
+<td>6:00–6:15</td>
+<td>Frente</td>
+<td>68</td>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+<td>78</td>
+</tr>
+<tr>
+<td>Martes</td>
+<td>6:00–6:15</td>
+<td>Derecha</td>
+<td>22</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Martes</td>
+<td>6:15–6:30</td>
+<td>Izquierda</td>
+<td>30</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>36</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody></table><ul><li><span><b>Formato por intervalo</b></span></li></ul><div><table>
+<thead>
+<tr>
+<th>Intervalo</th>
+<th>Izquierda</th>
+<th>Frente</th>
+<th>Derecha</th>
+<th>Total (veh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6:00–6:15</td>
+<td>31</td>
+<td>78</td>
+<td>24</td>
+<td>133</td>
+</tr>
+<tr>
+<td>6:15–6:30</td>
+<td>36</td>
+<td>90</td>
+<td>26</td>
+<td>152</td>
+</tr>
+<tr>
+<td>6:30–6:45</td>
+<td>40</td>
+<td>95</td>
+<td>29</td>
+<td>164</td>
+</tr>
+<tr>
+<td>6:45–7:00</td>
+<td>42</td>
+<td>105</td>
+<td>31</td>
+<td>178</td>
+</tr>
+<tr>
+<td>7:00–7:15</td>
+<td>50</td>
+<td>120</td>
+<td>35</td>
+<td>205</td>
+</tr>
+<tr>
+<td>7:15–7:30</td>
+<td>53</td>
+<td>130</td>
+<td>37</td>
+<td>220</td>
+</tr>
+<tr>
+<td>7:30–7:45</td>
+<td>56</td>
+<td>138</td>
+<td>40</td>
+<td>234</td>
+</tr>
+<tr>
+<td>7:45–8:00</td>
+<td>49</td>
+<td>125</td>
+<td>36</td>
+<td>210</td>
+</tr>
+</tbody></table><br></div></div></div><div><ul><li><span><b>Formato para composición</b></span></li></ul><div><table>
+<thead>
+<tr>
+<th>Tipo de vehículo</th>
+<th>Total semanal</th>
+<th>% participación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automóviles</td>
+<td>3 950</td>
+<td>76 %</td>
+</tr>
+<tr>
+<td>Motocicletas</td>
+<td>340</td>
+<td>6 %</td>
+</tr>
+<tr>
+<td>Camiones ligeros</td>
+<td>520</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Autobuses</td>
+<td>380</td>
+<td>8 %</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>5 190</strong></td>
+<td><strong>100 %</strong></td>
+</tr>
+</tbody></table><br></div></div><div><ul><li><span><b>Formato en estructura para software</b></span></li></ul></div><table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Hora</th>
+<th>Movimiento</th>
+<th>Auto</th>
+<th>Moto</th>
+<th>Bus</th>
+<th>Pesado</th>
+<th>Total</th>
+<th>Carril</th>
+<th>Dirección</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mar</td>
+<td>6:00–6:15</td>
+<td>Izquierda</td>
+<td>25</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>31</td>
+<td>1</td>
+<td>Norte</td>
+</tr>
+<tr>
+<td>Mar</td>
+<td>6:00–6:15</td>
+<td>Frente</td>
+<td>68</td>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+<td>78</td>
+<td>2</td>
+<td>Norte</td>
+</tr>
+<tr>
+<td>Mar</td>
+<td>6:00–6:15</td>
+<td>Derecha</td>
+<td>22</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>24</td>
+<td>3</td>
+<td>Norte</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody></table><br><br><span>Sin duda tu puedes usar más y los que quieras personalizar. En cuanto tenga tiempo, te compartiré el que yo uso para que ya no tengas que realizar ninguno tú.<br></span><h3><span>Aforo y encuesta ¿Podríamos considerar que son lo mismo?</span></h3></div><div><span>En el contexto del tráfico y la movilidad, es importante hacer una distinción entre una encuesta de origen-destino y un aforo. Ambos son métodos utilizados para recopilar datos relacionados con el movimiento de personas o vehículos, pero difieren en sus enfoques y objetivos.<br><br><b>Aforo: </b>Un aforo implica la medición directa y sistemática del flujo de vehículos o personas en un lugar específico durante un período de tiempo determinado. Se busca cuantificar la cantidad de tráfico en una ubicación particular mediante métodos como sensores, cámaras, contadores manuales, entre otros. Los aforos proporcionan datos concretos sobre la cantidad y tipo de tráfico en un momento y lugar específicos.<br><br><b>Encuesta de Origen-Destino:</b> Una encuesta de origen-destino, por otro lado, es un método que busca comprender los patrones de movimiento y los destinos de las personas o vehículos. En lugar de medir el flujo en un lugar específico, se recopilan datos sobre el origen y el destino de los viajes. Estas encuestas suelen incluir preguntas sobre el lugar de inicio y finalización de un viaje, el propósito del viaje, el medio de transporte utilizado, etc. Se utilizan para analizar patrones de movilidad en una escala más amplia.</span><div><div><br><h3><span>¿Es posible saber el grado de confiabilidad que hay en mis encuestas o aforos?</span></h3><span>¿Te has preguntado si es posible saber si tu aforo está bien hecho, si es confiable? ¿O si tu encuesta tiene bien relacionadas las preguntas y te entrega resultados confiables?<br>Claro que es posible, de hecho, es recomendado hacerlo, porque si los aforos o las encuestas muestran un buen grado de confiabilidad, estaremos seguros que nuestros datos aportarán resultados más útiles y precisos. Aquí te muestro una lista de diferentes métodos para medir la confiabilidad de aforos o encuestas, y más adelante mostraré un ejercicio con dos de ellos, el coeficiente alfa de Cronbach y el coeficiente de relación intraclase.<br><br><ul><li><span><b>Coeficiente Alfa de Cronbach:</b> Se utiliza para evaluar la consistencia interna de las preguntas en una encuesta. Si estás midiendo constructos similares con múltiples preguntas, el alfa de Cronbach puede indicar la consistencia interna entre ellas. Un valor alto (cerca de 1) sugiere mayor confiabilidad.</span></li><li><span><b>Coeficiente de Correlación Intraclase (ICC): </b>Es útil cuando hay mediciones repetidas, como en aforos o encuestas realizadas en diferentes momentos. El ICC evalúa la consistencia entre las mediciones y puede proporcionar información sobre la confiabilidad interobservador o test-retest.</span></li><li><span><b>Prueba-Retrueba:</b> En encuestas o aforos donde puedes repetir las mediciones, la prueba-reprueba es una forma directa de evaluar la confiabilidad. Calcula la correlación entre las respuestas o mediciones en dos momentos diferentes.</span></li><li><span><b>Análisis de Consistencia de Respuestas: </b>Examina la consistencia en las respuestas a través de diferentes secciones o preguntas de la encuesta. Por ejemplo, si en una encuesta preguntas relacionadas deberían tener respuestas coherentes entre sí, puedes analizar estas relaciones.</span></li><li><span><b>Análisis de Confiabilidad Interobservador:</b> Para aforos u observaciones realizadas por diferentes personas, puedes calcular la concordancia entre los observadores utilizando métricas como el índice kappa para variables categóricas o correlaciones para variables continuas.</span></li><li><span><b>Análisis de Varianza (ANOVA) para Mediciones Repetidas:</b> Si estás midiendo una variable continua en diferentes momentos o condiciones, el ANOVA para mediciones repetidas puede ayudarte a evaluar la consistencia de las mediciones a lo largo del tiempo.</span></li></ul></span></div><h4><span>El coeficiente Alfa de Cronbach</span></h4><span>El coeficiente alfa de Cronbach se puede utilizar para evaluar la confiabilidad de una encuesta origen-destino, pero hay algunas consideraciones importantes que debes tener en cuenta. El coeficiente alfa de Cronbach se desarrolló originalmente para medir la consistencia interna de escalas o pruebas, donde varias preguntas o ítems se utilizan para medir la misma variable subyacente. En una encuesta origen-destino, las preguntas pueden abordar diferentes aspectos de los viajes, como el origen, el destino, el propósito, el modo de transporte, entre otros.<br><br></span><div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZPhgbHSEIKN2jrX-68EmRxUc0rjAFx48620u9cX8x9Mgz878Caj-sTMT0bXB-ORdosNgO88RQYav2tiJR0vpk3jTQecBFSDCva_cLM_lJ_S8CsCX1yDjh9CY8xn85bxLPhxDr7oHQf8vTk0AeSCr0FtjNOm7wRLLlYIomHehJX7016hJWz-kjK2mcyvzx/w260-h208/Alfa%20de%20crombach.png" loading="lazy" decoding="async"></div><span><br>Para aplicar el alfa de Cronbach a una encuesta origen-destino:<br><br><ol><li><span>Selecciona Preguntas Relacionadas: Asegúrate de que las preguntas seleccionadas para el cálculo del alfa están relacionadas y miden constructos similares. Podrías, por ejemplo, seleccionar preguntas relacionadas con la consistencia en la información sobre el origen o el destino de los viajes.</span></li><li><span>Datos de Escala Likert: El alfa de Cronbach es más efectivo cuando las respuestas a las preguntas son de naturaleza ordinal y se pueden asignar a una escala Likert. Por ejemplo, si preguntas a los encuestados sobre la frecuencia con la que realizan ciertos tipos de viajes, y las respuestas son "nunca", "raramente", "a veces", "frecuentemente", puedes usar el alfa de Cronbach.</span></li><li><span>Escala Unidimensional: El alfa de Cronbach asume que los ítems están relacionados de manera unidimensional. Es decir, miden una única característica subyacente. Asegúrate de que las preguntas seleccionadas midan un solo constructo.</span></li><li><span>Preguntas Invertidas: Si algunas preguntas se invierten en la escala (por ejemplo, de manera que "muy de acuerdo" se convierte en "muy en desacuerdo"), es necesario tener en cuenta estas inversiones durante el análisis.</span></li></ol></span></div><div><br></div><div><h4><span>Se calcula mediante la fórmula: </span></h4><span>\[ \alpha = \frac{k}{k-1} \left( 1 - \frac{\sum_{i=1}^{k} \sigma_{i}^{2}}{\sigma_{T}^{2}} \right) \]<br><br>Donde:<br>- \( k \) es el número de ítems en la escala.<br>- \( \sigma_{i}^{2} \)  es la varianza de los puntajes en el ítem \( i \).<br>- \( \sigma_{T}^{2} \) es la varianza total de los puntajes.<br><br>El coeficiente alfa de Cronbach puede tomar valores entre 0 y 1. Un valor más cercano a 1 indica una mayor consistencia interna entre los ítems y, por lo tanto, una mayor confiabilidad en la escala. En la práctica, el cálculo manual del alfa de Cronbach puede ser complejo, y se prefiere utilizar software estadístico para realizar estos cálculos. Muchos programas estadísticos, como SPSS, R o Python con bibliotecas como NumPy o SciPy, tienen funciones específicas para calcular el alfa de Cronbach a partir de los datos recopilados en un estudio o encuesta.</span></div><div><span><br></span><br><span><b>Coeficiente de Correlación Intraclase (ICC)</b></span></div><div><span><br>    El Coeficiente de Correlación Intraclase (ICC, por sus siglas en inglés Intra-Class Correlation) es una medida estadística utilizada para evaluar la confiabilidad o consistencia en la medición de variables continuas, especialmente cuando las mediciones se obtienen de múltiples observadores o en diferentes momentos. Este coeficiente es particularmente útil en situaciones donde la variabilidad entre observadores o mediciones puede ser significativa.</span></div><div><span><br></span><div><div><div class="separator"><div><span>El ICC cuantifica la proporción de la variabilidad total de las mediciones que se atribuye a la variabilidad entre observadores o momentos en comparación con la variabilidad total. En otras palabras, mide la concordancia o acuerdo entre diferentes observadores o mediciones.<br></span><br><div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrVQSyPCBjrYxliAjJtAN5p1nB70icCZ3W61M8kD4xL-vxsrvl0YgbnzbD9ug8Y32Mcq70dlDiaLoVhNmTfO5G99I2qaftecKzrWHip6cdVUiPt96P9DTUDSUv02WLKwAPasmdQk4gv6ym6XxWJy-onK4qwT9FBhctvJXSsSj62o4P0aUtPB2vkgwIiUD4/w239-h191/ICC.webp" loading="lazy" decoding="async"></div></div><br><span>Aplicaciones y Usos del ICC:</span></div></div><div><ul><li><span>Estudios de Fiabilidad: El ICC se utiliza comúnmente para evaluar la fiabilidad o consistencia entre diferentes observadores o evaluadores. Por ejemplo, aforos vehiculares, o estudios clínicos.</span></li><li><span>Estudios de Test-Retest: En estudios donde se repiten mediciones en el mismo grupo de sujetos en diferentes momentos (test-retest), el ICC puede proporcionar información sobre la estabilidad temporal de las mediciones.</span></li><li><span>Evaluación de Instrumentos de Medición: Se utiliza para evaluar la consistencia de un instrumento de medición o prueba. Por ejemplo, si se está utilizando un dispositivo para medir la presión arterial y se quiere evaluar la consistencia entre múltiples mediciones tomadas con el mismo dispositivo.</span></li></ul><br><h4><span>Fórmula del ICC:</span></h4><span>El ICC se calcula como la proporción de la variabilidad entre los sujetos (o momentos) con respecto a la variabilidad total, y se expresa de la siguiente manera:<br><br>\[ ICC = \frac{\text{Varianza Entre Sujetos (o Momentos)}}{\text{Varianza Total}} \]<br><br><br>Ejemplo:<br><br>Supongamos que realizaste 10 aforos en una intersección para contar la cantidad de vehículos que pasan en un período de tiempo específico. Anotaste los resultados en cada aforo. A continuación, presentaré una forma más relevante de evaluar la confiabilidad de tus conteos, utilizando la fórmula del coeficiente de correlación intraclase (ICC), que es más apropiada para este tipo de análisis.<br><br><br><b>Datos Ficticios de Aforos:</b><br><br>Aforo 1: 150 vehículos<br>Aforo 2: 155 vehículos<br>Aforo 3: 148 vehículos<br>Aforo 4: 152 vehículos<br>Aforo 5: 149 vehículos<br>Aforo 6: 153 vehículos<br>Aforo 7: 151 vehículos<br>Aforo 8: 154 vehículos<br>Aforo 9: 150 vehículos<br>Aforo 10: 152 vehículos<br></span></div><div><span><br></span><h4><span>Paso a Paso del Cálculo del ICC:</span></h4><span><b>1. Calcula la Varianza Total (\( \sigma_{T}^{2} \)):</b><br><br>Calculamos la media general (\( \bar{X} \)):<br>     \[ \bar{X} = \frac{150 + 155 + 148 + \ldots + 152}{10} = \frac{1538}{10} = 153.8 \]<br>   - Calculamos la varianza total (\( \sigma_{T}^{2} \)):<br>     \[ \sigma_{T}^{2} = \frac{(150 - 153.8)^2 + (155 - 153.8)^2 + \ldots + (152 - 153.8)^2}{10-1} \]<br><br><br><b>2. Calcula la Varianza Residual (\( \sigma_{R}^{2} \)):</b><br>Para este ejemplo, consideremos que cada aforo se realizó con el mismo número de conteos (\( k = 1 \)). Entonces, la varianza residual (\( \sigma_{R}^{2} \)) se calcularía utilizando la fórmula:<br>     \[ \sigma_{R}^{2} = \frac{\sum_{i=1}^{n} (X_{i} - \bar{X_{i}})^2}{n \times (k-1)} \]<br>   - Donde \( X_{i} \) es el resultado del aforo \( i \), y \( \bar{X_{i}} \) es el promedio de los conteos en el aforo \( i \).<br><br><br><b>3. Calcula el ICC:</b><br>Utilizamos la fórmula del ICC:<br>     \[ ICC = \frac{\sigma_{T}^{2} - \sigma_{R}^{2}}{\sigma_{T}^{2} + (k-1) \times \sigma_{R}^{2}} \]<br>Donde \( k \) es el número de conteos en cada aforo.</span></div><div><span><br>En este caso, el cálculo real de los valores puede ser tedioso, pero la esencia del cálculo implica determinar cuánta variabilidad total proviene de las diferencias entre los aforos en comparación con la variabilidad total. Un ICC cercano a 1 sugiere alta concordancia entre los aforos, mientras que un valor más bajo indicaría mayor variabilidad entre los aforos.<br>Es importante tener en cuenta que este cálculo específico es un ejemplo simplificado, y en la práctica, se pueden utilizar herramientas estadísticas como R, Python (con bibliotecas como NumPy o SciPy), o software especializado para realizar estos cálculos de manera más eficiente.<br><br><br>Aquí te dejo el código en python para calcular con los siguientes pasos:<br><ol><li><span>Calcula la Varianza Total.</span></li><li><span>Calcula la Varianza Residual (para este ejemplo, suponiendo que cada aforo tiene el mismo número de conteos).</span></li><li><span>Calcula el ICC utilizando la fórmula del ICC.</span></li></ol></span></div></div><div><span><br>import numpy as np<br><br><br># Datos ficticios de aforos<br>aforos = np.array([<br>    [150],<br>    [155],<br>    [148],<br>    [152],<br>    [149],<br>    [153],<br>    [151],<br>    [154],<br>    [150],<br>    [152],<br>])<br><br><br># Calcula la Varianza Total<br>var_total = np.var(aforos)<br><br><br># Calcula la Varianza Residual<br>var_residual = np.var(aforos.flatten(), ddof=1)<br><br><br># Verifica si la varianza residual es muy pequeña<br>if var_residual &lt; 1e-10:<br>    print("La varianza residual es muy pequeña. El ICC no puede calcularse de manera confiable.")<br>else:<br>    # Calcula el número de aforos y el número de conteos en cada aforo<br>    n_aforos, k_contadores = aforos.shape<br><br><br>    # Calcula el Coeficiente de Correlación Intraclase (ICC)<br>    icc = (var_total - var_residual) / (var_total + (k_contadores - 1) * var_residual)<br><br><br>    print("Coeficiente de Correlación Intraclase (ICC):", icc)</span><br><span><br><br><b>Resultado:</b><br>Coeficiente de Correlación Intraclase (ICC): -0.11111111111111109<br><br>Si el Coeficiente de Correlación Intraclase (ICC) resulta en un número negativo, puede indicar que hay problemas en los datos o en el cálculo, y el ICC puede no ser una métrica adecuada en esa situación específica. En el contexto del ICC, un valor negativo generalmente no tiene interpretación práctica y sugiere que la variabilidad entre las mediciones es menor de lo esperado.<br><br>Aquí hay algunas posibles razones por las cuales podrías obtener un ICC negativo:<br><br><ul><li><span>Problemas en los Datos: Podría haber errores o inconsistencias en los datos recopilados, como valores atípicos o errores de medición, que afectan negativamente la variabilidad entre las mediciones.</span></li><li><span>Problemas en el Diseño del Estudio: El diseño del estudio puede no ser apropiado para el cálculo del ICC. Por ejemplo, si el número de observaciones o mediciones es muy pequeño en comparación con el número de grupos o sujetos, los cálculos pueden verse afectados.</span></li><li><span>Problemas&nbsp;en el Cálculo: Puede haber errores en el código de cálculo. Asegúrate de utilizar las fórmulas correctas y de manejar adecuadamente las operaciones matemáticas para evitar divisiones por cero o errores similares.</span></li><li><span>Poca Variabilidad entre las Mediciones: Si hay muy poca variabilidad entre las mediciones, especialmente si la varianza residual es muy pequeña en comparación con la varianza total, el ICC puede ser negativo.</span></li></ul><br>Claramente este resultado se debe a que para este ejemplo se han inventado los datos y también han sido muy pocos, sin embargo, si en un caso real suceda lo mismo, podrías revisar cuidadosamente tus datos, verificar el diseño del estudio y asegurarte de utilizar fórmulas y métodos de cálculo adecuados. Si la varianza residual es cercana a cero, eso también puede indicar que el ICC no es una métrica apropiada para tu situación, y podrías considerar otras métricas de evaluación de la confiabilidad o la consistencia.<br><br>Es importante destacar que esta implementación asume que las mediciones se realizaron en el mismo conjunto de sujetos y que el número de observaciones es el mismo para cada sujeto (en este caso, cada aforo tiene el mismo número de conteos). Si las condiciones son diferentes, el código debe adaptarse para tener en cuenta estas variaciones. Además, en la práctica, puede ser más conveniente utilizar bibliotecas especializadas en análisis de varianza, como "<i>pingouin"</i>&nbsp;o "<i>statsmodels"</i>, que proporcionan funciones específicas para calcular el ICC y tienen en cuenta diferentes modelos.<br><br>Piensa que si haces esto con los datos de tus aforos, te asegurarás de estar validando tu trabajo de campo y tus datos estarán fielmente respaldados.<br><br><br><div>Héctor</div></span></div></div></div></div></div></div></article><aside class="article-source"><span>Publicado originalmente en el blog Ingeniería en Movilidad y Sistemas de Transporte Urbano.</span><a href="https://transporte-urbano-ingenieria.blogspot.com/2023/12/aforos-vehiculares-y-calculo-de.html" target="_blank" rel="noreferrer">Ver publicación original ↗</a></aside></main></div>
+    <footer class="site-footer page-shell">
+      <div>
+        <strong>Héctor A. Benítez García</strong>
+        <span>Ingeniería · investigación · docencia</span>
+      </div>
+      <p>Ciudad de México · 2026</p>
+      <div class="footer-links">
+        <a href="https://transporte-urbano-ingenieria.blogspot.com/" target="_blank" rel="noreferrer">blog original ↗</a>
+        <a href="#top">volver arriba ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
