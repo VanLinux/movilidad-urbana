@@ -766,6 +766,17 @@ p {
 .prose-content blockquote { margin: 28px 0; padding-left: 20px; border-left: 2px solid var(--ink); color: var(--muted); }
 .prose-content iframe { width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--ink); }
 
+.prose-content .katex { font-size: 1.08em; }
+.prose-content .katex-display {
+  max-width: 100%;
+  margin: 1.35em 0;
+  padding: .35rem 0 .5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+  scrollbar-width: thin;
+}
+
 /* Aulas */
 .classrooms-hero {
   background: var(--graphite);
