@@ -80,3 +80,68 @@ resourceButtons.forEach((button) => {
     filterResources();
   });
 });
+
+const mathContainer = document.querySelector(".prose-content");
+
+function loadExternalScript(src) {
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (existing) {
+      if (existing.dataset.loaded === "true") resolve();
+      else {
+        existing.addEventListener("load", resolve, { once: true });
+        existing.addEventListener("error", reject, { once: true });
+      }
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = src;
+    script.crossOrigin = "anonymous";
+    script.addEventListener("load", () => {
+      script.dataset.loaded = "true";
+      resolve();
+    }, { once: true });
+    script.addEventListener("error", reject, { once: true });
+    document.head.append(script);
+  });
+}
+
+async function renderArticleMath() {
+  if (!mathContainer) return;
+
+  if (!window.katex) {
+    await loadExternalScript("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js");
+  }
+
+  mathContainer.querySelectorAll(".katex").forEach((element) => {
+    if (element.querySelector(".katex-html")) return;
+    const source = element.querySelector('annotation[encoding="application/x-tex"]')?.textContent;
+    if (!source) return;
+    window.katex.render(source, element, {
+      displayMode: false,
+      throwOnError: false,
+      strict: "ignore",
+      trust: false,
+    });
+  });
+
+  if (!window.renderMathInElement) {
+    await loadExternalScript("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js");
+  }
+
+  window.renderMathInElement(mathContainer, {
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "\\[", right: "\\]", display: true },
+      { left: "\\(", right: "\\)", display: false },
+    ],
+    throwOnError: false,
+    strict: "ignore",
+    trust: false,
+  });
+}
+
+renderArticleMath().catch((error) => {
+  console.error("No fue posible renderizar las ecuaciones LaTeX.", error);
+});
