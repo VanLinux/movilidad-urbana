@@ -7,10 +7,11 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const index = await readFile(join(root, "index.html"), "utf8");
 const articles = await readFile(join(root, "articulos", "index.html"), "utf8");
 const classes = await readFile(join(root, "clases", "index.html"), "utf8");
+const articleCount = (articles.match(/class="archive-card"/g) || []).length;
 
 const checks = [
   [index.includes("Ingeniería para"), "portada"],
-  [(articles.match(/class="archive-card"/g) || []).length === 34, "archivo de 34 artículos"],
+  [articleCount > 0, "archivo de artículos"],
   [classes.includes("29"), "29 recursos de clase"],
   [classes.includes("Ingeniería de Tránsito"), "materias"],
   [index.includes("transporte-urbano-ingenieria.blogspot.com"), "enlace al blog"],
@@ -38,7 +39,10 @@ async function collectHtml(directory) {
 }
 
 await collectHtml(root);
-if (htmlFiles.length !== 40) throw new Error(`Se esperaban 40 páginas y se encontraron ${htmlFiles.length}`);
+const expectedPages = 6 + articleCount;
+if (htmlFiles.length !== expectedPages) {
+  throw new Error(`Se esperaban ${expectedPages} páginas y se encontraron ${htmlFiles.length}`);
+}
 
 for (const file of htmlFiles) {
   const $ = cheerio.load(await readFile(file, "utf8"));

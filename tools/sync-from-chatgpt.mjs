@@ -9,6 +9,11 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const source = "https://movilidad-urbana.vanlinux.chatgpt.site";
 const base = "/movilidad-urbana";
 const execFile = promisify(execFileCallback);
+const siteToken = process.env.SITES_BEARER_TOKEN;
+const siteRequest = siteToken
+  ? { headers: { "OAI-Sites-Authorization": `Bearer ${siteToken}` } }
+  : {};
+let articleCount = 0;
 
 const coreRoutes = ["/", "/articulos", "/clases", "/videos", "/biblioteca", "/software"];
 
@@ -22,7 +27,7 @@ const routeLabels = {
 };
 
 async function fetchText(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, siteRequest);
   if (!response.ok) throw new Error(`${response.status} al recuperar ${url}`);
   return response.text();
 }
@@ -108,7 +113,7 @@ async function saveInternalImage(src) {
   const temporary = join(root, "assets", "media", temporaryName);
   const optimized = join(root, "assets", "media", optimizedName);
   await mkdir(dirname(temporary), { recursive: true });
-  const response = await fetch(url);
+  const response = await fetch(url, siteRequest);
   if (!response.ok) throw new Error(`${response.status} al recuperar imagen ${url}`);
   await writeFile(temporary, Buffer.from(await response.arrayBuffer()));
   await execFile("convert", [temporary, "-resize", "1400x900>", "-quality", "78", optimized]);
@@ -151,6 +156,12 @@ async function prepareMain(html, pathname) {
 
   if (pathname === "/") {
     main.find(".hero").prepend(heroGraphic());
+  }
+
+  if (pathname === "/articulos") {
+    main.find(".archive-hero .page-shell > p").last().text(
+      `${articleCount} textos migrados del blog original, conservando fechas, etiquetas y autoría.`
+    );
   }
 
   return main.toString();
@@ -203,6 +214,7 @@ async function buildRoute(pathname) {
 
 await saveInternalImage("/hero-intercambio.png");
 const articleRoutes = await discoverArticleRoutes();
+articleCount = articleRoutes.length;
 const routes = [...coreRoutes, ...articleRoutes];
 for (const route of routes) await buildRoute(route);
 for (const file of await readdir(join(root, "assets", "media"))) {
