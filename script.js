@@ -1,3 +1,36 @@
+const mobileViewport = window.matchMedia("(max-width: 760px)");
+
+function applyMobilePerformanceFixes() {
+  if (!mobileViewport.matches || document.getElementById("mobile-performance-fixes")) return;
+
+  const style = document.createElement("style");
+  style.id = "mobile-performance-fixes";
+  style.textContent = `
+    @media (max-width: 760px) {
+      .site-header {
+        background: var(--paper);
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+      .hero-grid {
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+        opacity: .22;
+      }
+      .hero-technical svg {
+        filter: none !important;
+      }
+      .classroom-image,
+      .prose-content img {
+        filter: none !important;
+      }
+    }
+  `;
+  document.head.append(style);
+}
+
+applyMobilePerformanceFixes();
+
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".main-nav");
 
@@ -195,6 +228,7 @@ function renderVisitCounter() {
   badge.src = badgeUrl.toString();
   badge.alt = "Visitas registradas para esta página";
   badge.decoding = "async";
+  badge.loading = "lazy";
   badge.referrerPolicy = "no-referrer";
   badge.addEventListener("error", () => counter.remove(), { once: true });
 
@@ -202,4 +236,16 @@ function renderVisitCounter() {
   footerMeta.append(counter);
 }
 
-renderVisitCounter();
+function scheduleVisitCounter() {
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(renderVisitCounter, { timeout: 2500 });
+  } else {
+    window.setTimeout(renderVisitCounter, 1200);
+  }
+}
+
+if (document.readyState === "complete") {
+  scheduleVisitCounter();
+} else {
+  window.addEventListener("load", scheduleVisitCounter, { once: true });
+}
