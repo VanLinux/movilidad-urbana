@@ -766,6 +766,9 @@ p {
   width: min(100%, 560px);
   margin: 30px auto;
 }
+.prose-content .article-figure-wide {
+  width: min(100%, 760px);
+}
 .prose-content .article-figure img {
   width: 100%;
   margin: 0;
@@ -778,6 +781,65 @@ p {
   line-height: 1.45;
   text-align: center;
 }
+.article-state-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 30px 0 36px;
+}
+.article-state-card {
+  padding: 21px 22px 19px;
+  border: 1px solid var(--line-dark);
+  border-top: 3px solid var(--signal);
+  background: var(--soft);
+}
+.article-state-card h3 {
+  margin: 0 0 11px;
+  font-size: 1.25rem;
+}
+.article-state-card p {
+  margin: .7em 0;
+  font-size: .94rem;
+  line-height: 1.68;
+}
+.article-state-card p:last-child { margin-bottom: 0; }
+.article-equation {
+  margin: 28px 0;
+  padding: 13px 17px;
+  border-left: 3px solid var(--signal);
+  background: var(--soft);
+}
+.article-resources {
+  margin: 44px 0;
+  padding: 27px 29px 29px;
+  border: 1px solid var(--ink);
+  background: var(--graphite);
+  color: var(--white);
+}
+.article-content.prose-content .article-resources p { color: #e0e0dc; }
+.article-resource-link {
+  min-height: 48px;
+  margin: 14px 0 25px;
+  padding: 12px 15px;
+  border: 1px solid #bdbdb7;
+  background: var(--paper);
+  color: var(--ink) !important;
+  font-family: var(--mono);
+  font-weight: 700;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.article-resource-link::after {
+  content: "↗";
+  flex: 0 0 auto;
+  color: var(--signal);
+  font-size: 1.1rem;
+}
+.article-resource-link:last-child { margin-bottom: 0; }
+.article-resource-link:hover { background: var(--white); color: var(--signal) !important; }
 .prose-content table { display: block; width: 100%; margin: 28px 0; border-collapse: collapse; overflow-x: auto; }
 .prose-content th,
 .prose-content td { padding: 9px 11px; border: 1px solid var(--line-dark); }
@@ -977,6 +1039,9 @@ p {
   .source-banner { flex-direction: column; }
   .article-byline { flex-direction: column; gap: 5px; }
   .prose-content { font-size: 1rem; }
+  .article-state-grid { grid-template-columns: 1fr; }
+  .article-state-card { padding: 19px; }
+  .article-resources { padding: 22px 20px 24px; }
   .classrooms-stats { width: 100%; }
   .classrooms-intro { padding-block: 56px 32px; }
   .classroom-grid { padding-bottom: 70px; }

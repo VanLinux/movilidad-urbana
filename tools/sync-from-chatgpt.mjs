@@ -1,6 +1,6 @@
 import * as cheerio from "cheerio";
 import { execFile as execFileCallback } from "node:child_process";
-import { mkdir, readdir, stat, unlink, writeFile } from "node:fs/promises";
+import { mkdir, readdir, rename, stat, unlink, writeFile } from "node:fs/promises";
 import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
@@ -108,16 +108,19 @@ async function saveInternalImage(src) {
   const cleanName = url.pathname.split("/").filter(Boolean).pop() || "image.bin";
   const extension = extname(cleanName) || ".bin";
   const stem = cleanName.slice(0, cleanName.length - extension.length).replace(/[^a-zA-Z0-9_-]+/g, "-");
-  const temporaryName = `${stem}${extension}`;
+  const temporaryName = `${stem}.source${extension}`;
   const optimizedName = `${stem}.webp`;
+  const optimizedTemporaryName = `${stem}.optimized.webp`;
   const temporary = join(root, "assets", "media", temporaryName);
   const optimized = join(root, "assets", "media", optimizedName);
+  const optimizedTemporary = join(root, "assets", "media", optimizedTemporaryName);
   await mkdir(dirname(temporary), { recursive: true });
   const response = await fetch(url, siteRequest);
   if (!response.ok) throw new Error(`${response.status} al recuperar imagen ${url}`);
   await writeFile(temporary, Buffer.from(await response.arrayBuffer()));
-  await execFile("convert", [temporary, "-resize", "1400x900>", "-quality", "78", optimized]);
-  if ((await stat(optimized)).size === 0) throw new Error(`La imagen optimizada quedó vacía: ${optimizedName}`);
+  await execFile("convert", [temporary, "-resize", "1400x900>", "-quality", "78", optimizedTemporary]);
+  if ((await stat(optimizedTemporary)).size === 0) throw new Error(`La imagen optimizada quedó vacía: ${optimizedName}`);
+  await rename(optimizedTemporary, optimized);
   await unlink(temporary);
   return `${base}/assets/media/${optimizedName}`;
 }
@@ -160,7 +163,7 @@ async function prepareMain(html, pathname) {
 
   if (pathname === "/articulos") {
     main.find(".archive-hero .page-shell > p").last().text(
-      `${articleCount} textos migrados del blog original, conservando fechas, etiquetas y autoría.`
+      `${articleCount} textos publicados, conservando fechas, etiquetas y autoría.`
     );
   }
 
@@ -179,6 +182,7 @@ function pageTemplate({ title, description, pathname, main }) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     <link rel="stylesheet" href="${base}/styles.css">
     <script src="${base}/script.js" defer></script>
+    ${pathname === "/software" ? `<script src="${base}/software/catalogo-propio.js" defer></script>` : ""}
   </head>
   <body id="top">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>

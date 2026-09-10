@@ -4,7 +4,7 @@ Portal académico de Héctor A. Benítez García publicado mediante GitHub Pages
 
 ## Contenido
 
-- 35 artículos migrados del blog original.
+- 36 artículos publicados.
 - 8 materias con 29 recursos de clase.
 - Secciones de videos, biblioteca, prácticas y software.
 - Diseño estático, adaptable y accesible.
