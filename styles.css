@@ -930,6 +930,7 @@ p {
 /* Software desarrollado por el autor */
 .software-owned-section { padding-block: 64px 0; }
 .software-owned-heading { margin-bottom: 30px; }
+.software-owned-list { display: grid; gap: 22px; }
 .software-owned-card {
   padding: 30px;
   border: 1px solid var(--ink);

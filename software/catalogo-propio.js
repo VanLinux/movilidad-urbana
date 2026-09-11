@@ -12,6 +12,7 @@ if (archiveHero) {
       </div>
       <p>Aplicaciones abiertas orientadas a la docencia, la investigación y el análisis de sistemas de transporte.</p>
     </div>
+    <div class="software-owned-list">
     <article class="software-owned-card">
       <div class="software-owned-copy">
         <span class="content-meta">Aplicación educativa · Código abierto · Versión 0.2</span>
@@ -28,6 +29,23 @@ if (archiveHero) {
         <a class="button button-secondary" href="https://github.com/VanLinux/macronet-transport" target="_blank" rel="noreferrer">Ver código fuente <span aria-hidden="true">GitHub ↗</span></a>
       </div>
     </article>
+    <article class="software-owned-card">
+      <div class="software-owned-copy">
+        <span class="content-meta">Aplicación educativa · Código abierto · Versión 2.0.0</span>
+        <h3>HCNet Transport</h3>
+        <p>Aplicación educativa para analizar intersecciones semaforizadas aisladas. Calcula capacidad, grado de saturación, demora de control y nivel de servicio por grupo de carriles; además, permite revisar la memoria de cálculo y exportar resultados en CSV y LaTeX.</p>
+        <dl class="software-facts">
+          <div><dt>Desarrollo</dt><dd>Héctor Alonso Benítez García</dd></div>
+          <div><dt>Alojamiento</dt><dd>Repositorio público en GitHub: VanLinux/hcnet-transport</dd></div>
+          <div><dt>Compatibilidad</dt><dd>Disponible para distribuciones GNU/Linux de escritorio.</dd></div>
+        </dl>
+      </div>
+      <div class="software-owned-actions" aria-label="Recursos de HCNet Transport">
+        <a class="button button-primary" href="/movilidad-urbana/software/manuales/HCNet_Transport_Manual_Usuario.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF ↗</span></a>
+        <a class="button button-secondary" href="https://github.com/VanLinux/hcnet-transport" target="_blank" rel="noreferrer">Ver código fuente <span aria-hidden="true">GitHub ↗</span></a>
+      </div>
+    </article>
+    </div>
   `;
 
   archiveHero.insertAdjacentElement("afterend", ownedSoftwareSection);
