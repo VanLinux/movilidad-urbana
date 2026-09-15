@@ -39,7 +39,7 @@ async function collectHtml(directory) {
 }
 
 await collectHtml(root);
-const expectedPages = 6 + articleCount;
+const expectedPages = 7 + articleCount;
 if (htmlFiles.length !== expectedPages) {
   throw new Error(`Se esperaban ${expectedPages} páginas y se encontraron ${htmlFiles.length}`);
 }

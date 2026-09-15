@@ -34,6 +34,17 @@ applyMobilePerformanceFixes();
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".main-nav");
 
+if (navigation && !navigation.querySelector('a[href="/movilidad-urbana/boletin/"]')) {
+  const newsletterLink = document.createElement("a");
+  newsletterLink.href = "/movilidad-urbana/boletin/";
+  newsletterLink.textContent = "Boletín";
+  if (window.location.pathname.startsWith("/movilidad-urbana/boletin/")) {
+    navigation.querySelector('[aria-current="page"]')?.removeAttribute("aria-current");
+    newsletterLink.setAttribute("aria-current", "page");
+  }
+  navigation.append(newsletterLink);
+}
+
 if (menuButton && navigation) {
   menuButton.addEventListener("click", () => {
     const open = navigation.classList.toggle("is-open");
