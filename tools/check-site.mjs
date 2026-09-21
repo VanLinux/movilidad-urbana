@@ -12,7 +12,8 @@ const articleCount = (articles.match(/class="archive-card"/g) || []).length;
 const checks = [
   [index.includes("Ingeniería para"), "portada"],
   [articleCount > 0, "archivo de artículos"],
-  [classes.includes("29"), "29 recursos de clase"],
+  [classes.includes("30"), "30 recursos de clase"],
+  [classes.includes("Contexto de la ingeniería enfocada a la movilidad"), "nueva clase de movilidad"],
   [classes.includes("Ingeniería de Tránsito"), "materias"],
   [index.includes("transporte-urbano-ingenieria.blogspot.com"), "enlace al blog"],
 ];
