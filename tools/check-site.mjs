@@ -7,6 +7,8 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const index = await readFile(join(root, "index.html"), "utf8");
 const articles = await readFile(join(root, "articulos", "index.html"), "utf8");
 const classes = await readFile(join(root, "clases", "index.html"), "utf8");
+const resources = await readFile(join(root, "recursos", "index.html"), "utf8");
+const softwareCatalog = await readFile(join(root, "software", "catalogo-propio.js"), "utf8");
 const articleCount = (articles.match(/class="archive-card"/g) || []).length;
 
 const checks = [
@@ -15,6 +17,11 @@ const checks = [
   [classes.includes("30"), "30 recursos de clase"],
   [classes.includes("Contexto de la ingeniería enfocada a la movilidad"), "nueva clase de movilidad"],
   [classes.includes("Ingeniería de Tránsito"), "materias"],
+  [resources.includes("Calculadora NumWorks en línea"), "calculadora NumWorks"],
+  [resources.includes("Equilibrio de Wardrop en GNU Octave"), "código de Wardrop"],
+  [resources.includes("no son formatos oficiales"), "aviso de hojas de campo"],
+  [softwareCatalog.includes("Versión 3.1.1"), "MacroNet Transport 3.1.1"],
+  [softwareCatalog.includes("Manual_MacroNet_Transport_v3.1.1.pdf"), "manual de MacroNet 3.1.1"],
   [index.includes("transporte-urbano-ingenieria.blogspot.com"), "enlace al blog"],
 ];
 
@@ -23,6 +30,9 @@ for (const [ok, label] of checks) {
 }
 
 await stat(join(root, "assets", "media", "hero-intercambio.webp"));
+await stat(join(root, "software", "manuales", "Manual_MacroNet_Transport_v3.1.1.pdf"));
+await stat(join(root, "recursos", "codigo", "wardrop.m"));
+await stat(join(root, "recursos", "imagenes", "wardrop-network.svg"));
 for (const file of await readdir(join(root, "assets", "media"))) {
   if (file.endsWith(".webp") && (await stat(join(root, "assets", "media", file))).size === 0) {
     throw new Error(`Imagen vacía: ${file}`);
@@ -40,7 +50,7 @@ async function collectHtml(directory) {
 }
 
 await collectHtml(root);
-const expectedPages = 7 + articleCount;
+const expectedPages = 8 + articleCount;
 if (htmlFiles.length !== expectedPages) {
   throw new Error(`Se esperaban ${expectedPages} páginas y se encontraron ${htmlFiles.length}`);
 }

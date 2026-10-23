@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Equilibrio de Wardrop en rutas paralelas</title>
+  <desc id="desc">Diagrama de un origen y un destino conectados mediante tres rutas con distintos flujos y tiempos.</desc>
+  <rect width="900" height="560" rx="28" fill="#123e4a"/>
+  <g opacity=".12" stroke="#fffdf8">
+    <path d="M0 70h900M0 140h900M0 210h900M0 280h900M0 350h900M0 420h900M0 490h900"/>
+    <path d="M90 0v560M180 0v560M270 0v560M360 0v560M450 0v560M540 0v560M630 0v560M720 0v560M810 0v560"/>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M170 280C300 90 600 90 730 280" stroke="#f0a185" stroke-width="14"/>
+    <path d="M170 280H730" stroke="#fffdf8" stroke-width="14"/>
+    <path d="M170 280C300 470 600 470 730 280" stroke="#86a49b" stroke-width="14"/>
+  </g>
+  <g fill="#fffdf8" stroke="#c65f3e" stroke-width="7">
+    <circle cx="150" cy="280" r="54"/><circle cx="750" cy="280" r="54"/>
+  </g>
+  <g fill="#123e4a" font-family="Arial, sans-serif" font-weight="700" font-size="22" text-anchor="middle">
+    <text x="150" y="275">ORIGEN</text><text x="150" y="303">O</text>
+    <text x="750" y="275">DESTINO</text><text x="750" y="303">D</text>
+  </g>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(450 116)"><rect x="-84" y="-27" width="168" height="54" rx="27" fill="#0c303a" stroke="#f0a185"/><text y="8" fill="#fffdf8" font-size="24">t₁(x₁)</text></g>
+    <g transform="translate(450 280)"><rect x="-84" y="-27" width="168" height="54" rx="27" fill="#0c303a" stroke="#fffdf8"/><text y="8" fill="#fffdf8" font-size="24">t₂(x₂)</text></g>
+    <g transform="translate(450 444)"><rect x="-84" y="-27" width="168" height="54" rx="27" fill="#0c303a" stroke="#86a49b"/><text y="8" fill="#fffdf8" font-size="24">t₃(x₃)</text></g>
+    <text x="450" y="530" fill="#d4e0e0" font-size="20" letter-spacing="3">TIEMPOS IGUALES EN LAS RUTAS UTILIZADAS</text>
+  </g>
+  <g fill="#fffdf8">
+    <path d="m630 103 28 13-28 13z"/><path d="m630 267 28 13-28 13z"/><path d="m630 431 28 13-28 13z"/>
+  </g>
+</svg>

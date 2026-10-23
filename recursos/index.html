@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Calculadoras, código abierto y formatos de apoyo para clases y prácticas de ingeniería de tránsito y transporte.">
+    <meta name="theme-color" content="#111111">
+    <title>Recursos académicos | Movilidad y Transporte</title>
+    <link rel="stylesheet" href="/movilidad-urbana/styles.css">
+    <script src="/movilidad-urbana/script.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="/movilidad-urbana/" aria-label="Ir al inicio"><span class="brand-code">HABG/</span><span>movilidad urbana</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav"><span>menú</span><span aria-hidden="true">+</span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal"><a href="/movilidad-urbana/">Inicio</a><a href="/movilidad-urbana/articulos/">Artículos</a><a href="/movilidad-urbana/clases/">Clases</a><a href="/movilidad-urbana/videos/">Videos</a><a href="/movilidad-urbana/biblioteca/">Biblioteca</a><a href="/movilidad-urbana/recursos/" aria-current="page">Recursos</a><a href="/movilidad-urbana/software/">Software</a></nav>
+    </header>
+    <div id="contenido">
+      <main class="resources-page">
+        <section class="resources-hero">
+          <div class="page-shell resources-hero-grid">
+            <div><p class="kicker">Herramientas para aprender y aplicar</p><h1>Recursos</h1><p>Calculadoras, código y formatos de apoyo para resolver ejercicios, explorar modelos y preparar trabajo de campo.</p></div>
+            <div class="resources-hero-index" aria-label="Tipos de recursos disponibles"><span><strong>01</strong> cálculo</span><span><strong>02</strong> código</span><span><strong>03</strong> campo</span></div>
+          </div>
+        </section>
+        <section class="resources-intro page-shell" aria-labelledby="resources-heading">
+          <div><p class="kicker">Repositorio docente</p><h2 id="resources-heading">Material listo para usar en clase.</h2></div>
+          <p>Esta sección reunirá herramientas y archivos de apoyo seleccionados para estudiantes de ingeniería de tránsito, transporte y movilidad urbana.</p>
+        </section>
+        <section class="resources-directory page-shell" aria-label="Recursos disponibles">
+          <article class="resource-feature resource-feature-calculator">
+            <div class="resource-feature-copy">
+              <span class="resource-number">01 · CALCULADORA</span>
+              <h2>Calculadora NumWorks en línea</h2>
+              <p>Utiliza el simulador oficial de NumWorks directamente desde esta página para realizar operaciones, trabajar con funciones, matrices, estadística y representaciones gráficas sin instalar software adicional.</p>
+              <div class="resource-tags" aria-label="Características"><span>Simulador oficial</span><span>Uso inmediato</span><span>Interactivo</span></div>
+              <a class="button" href="https://www.numworks.com/simulator/" target="_blank" rel="noopener noreferrer">Abrir en una pestaña <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="numworks-shell"><iframe src="https://www.numworks.com/simulator/embed/" width="368" height="720" title="Simulador de calculadora NumWorks" loading="lazy"></iframe></div>
+          </article>
+          <article class="resource-feature resource-feature-wardrop">
+            <div class="resource-visual"><img src="/movilidad-urbana/recursos/imagenes/wardrop-network.svg" alt="Tres rutas paralelas con flujos distribuidos según el equilibrio de Wardrop"></div>
+            <div class="resource-feature-copy">
+              <span class="resource-number">02 · CÓDIGO GNU OCTAVE</span>
+              <h2>Equilibrio de Wardrop en GNU Octave</h2>
+              <p>Programa educativo para estudiar rutas paralelas con funciones de tiempo lineales. Calcula el equilibrio de usuario continuo, una solución con vehículos enteros y el óptimo del sistema; además, compara tiempos y costos agregados.</p>
+              <ul class="resource-checklist"><li>Captura problemas nuevos o ejecuta un ejemplo de tres rutas.</li><li>Calcula el precio de la anarquía y analiza cambios en la demanda.</li><li>Exporta resultados en CSV y TXT, además de gráficas PNG cuando el entorno lo permite.</li><li>Funciona en GNU Octave sin paquetes adicionales.</li></ul>
+              <div class="resource-actions"><a class="button button-primary" href="/movilidad-urbana/recursos/codigo/wardrop.txt" target="_blank" rel="noreferrer">Ver código <span aria-hidden="true">↗</span></a><a class="button" href="/movilidad-urbana/recursos/codigo/wardrop.m" download>Descargar <span aria-hidden="true">.m ↓</span></a></div>
+            </div>
+          </article>
+          <article class="resource-feature resource-feature-field">
+            <div class="resource-feature-copy">
+              <span class="resource-number">03 · TRABAJO DE CAMPO</span>
+              <h2>Hojas de campo para aforos</h2>
+              <p>Formatos de apoyo para organizar levantamientos de tránsito: movimientos direccionales, composición vehicular, velocidad de punto, demoras y observación del comportamiento semafórico.</p>
+              <div class="resource-note"><strong>Material de apoyo docente.</strong><p>Estas hojas no son formatos oficiales. Están basadas en el <em>Manual de estudios de ingeniería de tránsito</em> de Oppenlander y se comparten como apoyo para clases, prácticas y ejercicios académicos.</p></div>
+              <a class="button button-primary" href="https://drive.google.com/drive/u/0/folders/1FE5x9VmgBY372LMv6_ZckpcNkzY5hgKJ" target="_blank" rel="noopener noreferrer">Consultar hojas de campo <span aria-hidden="true">Drive ↗</span></a>
+            </div>
+            <div class="field-sheet-visual" aria-hidden="true"><div class="field-sheet-paper"><span>AFORO VEHICULAR</span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>Σ</b></div></div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <footer class="site-footer page-shell"><div><strong>Héctor A. Benítez García</strong><span>Ingeniería · investigación · docencia</span></div><p>Ciudad de México · 2026</p><div class="footer-links"><a href="https://transporte-urbano-ingenieria.blogspot.com/" target="_blank" rel="noreferrer">blog original ↗</a><a href="#top">volver arriba ↑</a></div></footer>
+    <script src="https://www.numworks.com/simulator/embed.js"></script>
+  </body>
+</html>

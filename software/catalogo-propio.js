@@ -15,9 +15,9 @@ if (archiveHero) {
     <div class="software-owned-list">
     <article class="software-owned-card">
       <div class="software-owned-copy">
-        <span class="content-meta">Aplicación educativa · Código abierto · Versión 0.2</span>
+        <span class="content-meta">Aplicación educativa · Código abierto · Versión 3.1.1</span>
         <h3>MacroNet Transport</h3>
-        <p>Aplicación interactiva para estudiar y ejecutar el modelo clásico de transporte de cuatro etapas: generación y atracción, distribución, elección modal y asignación de viajes a la red. Permite modificar datos y parámetros, revisar cálculos intermedios y exportar resultados para su análisis.</p>
+        <p>Aplicación interactiva para estudiar y ejecutar el modelo clásico de transporte de cuatro etapas. La versión 3.1.1 incorpora guardado de proyectos .mnet, calibración estadística, nuevas funciones de fricción, asignación Todo-o-Nada y equilibrio de usuario de Wardrop, comparación de métodos y exportaciones ampliadas en CSV, GraphML y LaTeX.</p>
         <dl class="software-facts">
           <div><dt>Desarrollo</dt><dd>Héctor A. Benítez García</dd></div>
           <div><dt>Alojamiento</dt><dd>Repositorio público en GitHub: VanLinux/macronet-transport</dd></div>
@@ -25,7 +25,7 @@ if (archiveHero) {
         </dl>
       </div>
       <div class="software-owned-actions" aria-label="Recursos de MacroNet Transport">
-        <a class="button button-primary" href="/movilidad-urbana/software/manuales/Manual_de_usuario_MacroNet_Transport_v0_2.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF ↗</span></a>
+        <a class="button button-primary" href="/movilidad-urbana/software/manuales/Manual_MacroNet_Transport_v3.1.1.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF · 3.1.1 ↗</span></a>
         <a class="button button-secondary" href="https://github.com/VanLinux/macronet-transport" target="_blank" rel="noreferrer">Ver código fuente <span aria-hidden="true">GitHub ↗</span></a>
       </div>
     </article>
