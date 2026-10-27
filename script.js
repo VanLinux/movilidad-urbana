@@ -123,8 +123,9 @@ async function renderArticleMath() {
 
   // Solo cargar KaTeX en paginas que efectivamente contienen expresiones matematicas.
   // Las ecuaciones importadas ya traen marcado .katex; no bloquear paginas generales.
+  const articleText = mathContainer.textContent || "";
   const containsMath = Boolean(mathContainer.querySelector(".katex")) ||
-    /\$\$|\\\\\(|\\\\\[/.test(mathContainer.textContent || "");
+    articleText.includes("$$") || articleText.includes("\\(") || articleText.includes("\\[");
   if (!containsMath) return;
 
   if (!window.katex) {
