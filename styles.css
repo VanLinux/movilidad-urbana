@@ -1212,3 +1212,23 @@ p {
   .numworks-shell { padding: 22px 10px 28px; }
   .field-sheet-visual { min-height: 390px; padding: 37px; }
 }
+
+/* Safari/iOS: minimizar capas costosas de composicion en pantallas pequenas.
+   Se aplica desde CSS, antes de que el script diferido pueda ejecutarse. */
+@media (max-width: 760px) {
+  .site-header {
+    background: var(--paper);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .hero-grid {
+    -webkit-mask-image: none;
+    mask-image: none;
+    opacity: .22;
+  }
+  .hero-technical svg,
+  .classroom-image,
+  .prose-content img {
+    filter: none;
+  }
+}
