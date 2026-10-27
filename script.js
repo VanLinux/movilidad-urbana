@@ -118,21 +118,38 @@ function loadExternalScript(src) {
   });
 }
 
+function loadMathStylesheet() {
+  // La hoja de estilos matematica se solicita solamente cuando hay formulas.
+  if (document.querySelector('link[href*="katex.min.css"]')) return;
+  const stylesheet = document.createElement("link");
+  stylesheet.rel = "stylesheet";
+  stylesheet.href = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css";
+  document.head.append(stylesheet);
+}
+
 async function renderArticleMath() {
   if (!mathContainer) return;
 
-  // Solo cargar KaTeX en paginas que efectivamente contienen expresiones matematicas.
-  // Las ecuaciones importadas ya traen marcado .katex; no bloquear paginas generales.
   const articleText = mathContainer.textContent || "";
-  const containsMath = Boolean(mathContainer.querySelector(".katex")) ||
-    articleText.includes("$$") || articleText.includes("\\(") || articleText.includes("\\[");
-  if (!containsMath) return;
+  const rawMath = articleText.includes("$$") ||
+    articleText.includes("\\(") || articleText.includes("\\[");
+  const katexNodes = [...mathContainer.querySelectorAll(".katex")];
+  const needsRendering = katexNodes.some((element) =>
+    !element.querySelector(".katex-html") &&
+    Boolean(element.querySelector('annotation[encoding="application/x-tex"]'))
+  );
+
+  if (!katexNodes.length && !rawMath) return;
+
+  // Para ecuaciones prerenderizadas solo se necesita el CSS.
+  loadMathStylesheet();
+  if (!rawMath && !needsRendering) return;
 
   if (!window.katex) {
     await loadExternalScript("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js");
   }
 
-  mathContainer.querySelectorAll(".katex").forEach((element) => {
+  katexNodes.forEach((element) => {
     if (element.querySelector(".katex-html")) return;
     const source = element.querySelector('annotation[encoding="application/x-tex"]')?.textContent;
     if (!source) return;
@@ -144,20 +161,21 @@ async function renderArticleMath() {
     });
   });
 
-  if (!window.renderMathInElement) {
-    await loadExternalScript("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js");
+  if (rawMath) {
+    if (!window.renderMathInElement) {
+      await loadExternalScript("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js");
+    }
+    window.renderMathInElement(mathContainer, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "\\(", right: "\\)", display: false },
+      ],
+      throwOnError: false,
+      strict: "ignore",
+      trust: false,
+    });
   }
-
-  window.renderMathInElement(mathContainer, {
-    delimiters: [
-      { left: "$$", right: "$$", display: true },
-      { left: "\\[", right: "\\]", display: true },
-      { left: "\\(", right: "\\)", display: false },
-    ],
-    throwOnError: false,
-    strict: "ignore",
-    trust: false,
-  });
 }
 
 renderArticleMath().catch((error) => {
