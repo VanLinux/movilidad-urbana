@@ -179,7 +179,7 @@ function pageTemplate({ title, description, pathname, main }) {
     <meta name="description" content="${description.replaceAll('"', "&quot;")}">
     <meta name="theme-color" content="#111111">
     <title>${title}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
     <link rel="stylesheet" href="${base}/styles.css">
     <script src="${base}/script.js" defer></script>
     ${pathname === "/software" ? `<script src="${base}/software/catalogo-propio.js" defer></script>` : ""}
