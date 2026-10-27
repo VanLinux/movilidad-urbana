@@ -1,36 +1,3 @@
-const mobileViewport = window.matchMedia("(max-width: 760px)");
-
-function applyMobilePerformanceFixes() {
-  if (!mobileViewport.matches || document.getElementById("mobile-performance-fixes")) return;
-
-  const style = document.createElement("style");
-  style.id = "mobile-performance-fixes";
-  style.textContent = `
-    @media (max-width: 760px) {
-      .site-header {
-        background: var(--paper);
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-      }
-      .hero-grid {
-        mask-image: none !important;
-        -webkit-mask-image: none !important;
-        opacity: .22;
-      }
-      .hero-technical svg {
-        filter: none !important;
-      }
-      .classroom-image,
-      .prose-content img {
-        filter: none !important;
-      }
-    }
-  `;
-  document.head.append(style);
-}
-
-applyMobilePerformanceFixes();
-
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".main-nav");
 
@@ -153,6 +120,12 @@ function loadExternalScript(src) {
 
 async function renderArticleMath() {
   if (!mathContainer) return;
+
+  // Solo cargar KaTeX en paginas que efectivamente contienen expresiones matematicas.
+  // Las ecuaciones importadas ya traen marcado .katex; no bloquear paginas generales.
+  const containsMath = Boolean(mathContainer.querySelector(".katex")) ||
+    /\$\$|\\\\\(|\\\\\[/.test(mathContainer.textContent || "");
+  if (!containsMath) return;
 
   if (!window.katex) {
     await loadExternalScript("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js");
