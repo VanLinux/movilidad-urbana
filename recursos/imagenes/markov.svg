@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" role="img" aria-labelledby="title desc">
+<title id="title">Cadena de Markov</title><desc id="desc">Ejemplo de dos estados: de A a B con probabilidad 0.2 y de B a A con probabilidad 0.3, con permanencias de 0.8 y 0.7.</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="m0 0 8 4-8 4" fill="#efa385"/></marker></defs>
+<rect width="560" height="400" rx="8" fill="#123e4a"/>
+<g fill="none" stroke="#efa385" stroke-width="3" marker-end="url(#a)"><path d="M180 170Q280 70 380 170"/><path d="M380 230Q280 330 180 230"/><path d="M115 165C25 70 25 325 115 235"/><path d="M445 235C535 325 535 70 445 165"/></g>
+<g fill="#e6eeeb" stroke="#8caeac" stroke-width="2"><circle cx="150" cy="200" r="53"/><circle cx="410" cy="200" r="53"/></g>
+<g text-anchor="middle" font-family="monospace"><g fill="#123e4a" font-size="36"><text x="150" y="212">A</text><text x="410" y="212">B</text></g><g fill="#efa385" font-size="23"><text x="280" y="116">0.2</text><text x="280" y="304">0.3</text><text x="52" y="205">0.8</text><text x="508" y="205">0.7</text></g><text x="280" y="365" fill="#d5e2df" font-size="15" letter-spacing="2">ESTADOS · TRANSICIONES · CONVERGENCIA</text></g>
+</svg>
