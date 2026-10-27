@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Diagnóstico de acceso móvil | Movilidad Urbana</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 28px 18px; background: #f6f6f3; color: #181818; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: clamp(24px, 5vw, 35px); line-height: 1.2; margin: 0 0 12px; }
+    p { margin: 10px 0; }
+    .ok { border-left: 4px solid #3c7164; background: white; padding: 13px 16px; margin: 20px 0; }
+    .row { border-bottom: 1px solid #ccc; padding: 12px 0; }
+    .value { font-weight: 600; }
+    .note { font-size: 14px; color: #555; }
+    a { color: #235974; }
+    button { margin: 20px 0 10px; padding: 11px 18px; border: 1px solid #111; border-radius: 0; background: #111; color: white; font: inherit; cursor: pointer; }
+    .test-results { margin: 15px 0; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Diagnóstico de acceso móvil</h1>
+  <p>Ingeniería en Movilidad Urbana y Transporte</p>
+  <div class="ok"><strong>Si puedes leer esta página, el servidor de GitHub Pages está respondiendo a tu dispositivo.</strong> Este diagnóstico no utiliza hojas de estilo, fuentes ni scripts externos.</div>
+  <p>La prueba siguiente revisa por separado los recursos del sitio. No registra datos personales.</p>
+  <div class="row">Navegador: <span class="value" id="browser">Sin analizar</span></div>
+  <div class="row">JavaScript: <span class="value" id="javascript">Sin ejecutar</span></div>
+  <div class="test-results" id="results" aria-live="polite"></div>
+  <button type="button" id="run">Repetir comprobación</button>
+  <p><a href="/movilidad-urbana/">Abrir la página principal</a></p>
+  <p class="note">Si aparece algún fallo, toma una captura de pantalla y compártela para localizar el problema. Si ni esta página abre, comprueba los datos móviles, la red Wi-Fi y la configuración de privacidad de Safari.</p>
+</main>
+<script>
+(function () {
+  "use strict";
+  var browser = document.getElementById("browser");
+  var js = document.getElementById("javascript");
+  var results = document.getElementById("results");
+  var run = document.getElementById("run");
+  browser.textContent = navigator.userAgent;
+  js.textContent = "Funciona";
+  var tests = [
+    ["Hoja de estilos del sitio", "/movilidad-urbana/styles.css"],
+    ["JavaScript del sitio", "/movilidad-urbana/script.js"],
+    ["Servidor externo KaTeX (jsDelivr)", "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"]
+  ];
+  function addRow(name) {
+    var row = document.createElement("div");
+    row.className = "row";
+    var label = document.createElement("strong");
+    label.textContent = name + ": ";
+    var value = document.createElement("span");
+    value.textContent = "comprobando...";
+    row.appendChild(label);
+    row.appendChild(value);
+    results.appendChild(row);
+    return value;
+  }
+  function check(name, url) {
+    var value = addRow(name);
+    var abort = window.AbortController ? new AbortController() : null;
+    var started = Date.now();
+    var timeout = window.setTimeout(function () {
+      if (abort) abort.abort();
+      value.textContent = "Tiempo de espera agotado";
+    }, 7000);
+    var params = { cache: "no-store" };
+    if (abort) params.signal = abort.signal;
+    fetch(url, params).then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      value.textContent = "Disponible (" + (Date.now() - started) + " ms)";
+    }).catch(function (error) {
+      value.textContent = "Error: " + error.message;
+    }).finally(function () {
+      window.clearTimeout(timeout);
+    });
+  }
+  function checkAll() {
+    results.textContent = "";
+    tests.forEach(function (test) { check(test[0], test[1]); });
+  }
+  run.addEventListener("click", checkAll);
+  checkAll();
+}());
+</script>
+</body>
+</html>
