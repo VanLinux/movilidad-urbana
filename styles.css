@@ -1232,3 +1232,14 @@ p {
     filter: none;
   }
 }
+
+/* WalkSim Mobility: presentación compacta */
+.software-owned-card-illustrated { grid-template-columns: minmax(0, 1fr) minmax(270px, 360px); align-items: center; }
+.software-owned-side { width: 100%; max-width: 360px; display: grid; gap: 20px; justify-self: center; }
+.software-preview { width: 100%; margin: 0; }
+.software-preview a { display: block; padding: 6px; background: #fff; border: 1px solid var(--line); transition: border-color .2s ease; }
+.software-preview a:hover { border-color: var(--terracotta, var(--signal)); }
+.software-preview img { width: 100%; height: auto; display: block; }
+.software-preview figcaption { margin-top: 8px; color: var(--muted); font-size: .68rem; line-height: 1.5; text-align: center; }
+
+@media (max-width: 760px) { .software-owned-card-illustrated { grid-template-columns: 1fr; } }
