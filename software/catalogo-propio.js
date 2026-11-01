@@ -21,7 +21,7 @@ if (archiveHero) {
             <dl class="software-facts">
               <div><dt>Desarrollo</dt><dd>Héctor A. Benítez García</dd></div>
               <div><dt>Alojamiento</dt><dd>Repositorio público en GitHub: VanLinux/macronet-transport</dd></div>
-              <div><dt>Compatibilidad</dt><dd>Disponible actualmente para GNU/Linux. Próximamente para Windows 11.</dd></div>
+              <div><dt>Compatibilidad</dt><dd>GNU/Linux y Windows 11 x64. Instalador de Windows con SUMO incluido.</dd></div>
             </dl>
           </div>
           <div class="software-owned-side">
@@ -32,7 +32,9 @@ if (archiveHero) {
               <figcaption>Las cuatro etapas del transporte · ampliar imagen ↗</figcaption>
             </figure>
             <div class="software-owned-actions" aria-label="Recursos de MacroNet Transport">
-              <a class="button button-primary" href="/movilidad-urbana/software/manuales/Manual_Integral_MacroNet_Transport_v3.3.2.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF · 3.3.2 ↗</span></a>
+              <a class="button button-primary" href="https://github.com/VanLinux/macronet-transport/releases/download/windows-v3.3.2/MacroNet-Transport-3.3.2-Windows-x64-Setup.exe">Descargar para Windows <span aria-hidden="true">EXE ↓</span></a>
+              <small style="color:var(--muted);line-height:1.5;font-size:.7rem">Windows 11 x64 · 242 MB · SUMO incluido. Instalador sin firma digital. No incluye compilador LaTeX.</small>
+              <a class="button button-secondary" href="/movilidad-urbana/software/manuales/Manual_Integral_MacroNet_Transport_v3.3.2.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF · 3.3.2 ↗</span></a>
               <a class="button button-secondary" href="https://github.com/VanLinux/macronet-transport" target="_blank" rel="noreferrer">Ver código fuente <span aria-hidden="true">GitHub ↗</span></a>
             </div>
           </div>
