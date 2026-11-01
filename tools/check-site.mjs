@@ -20,8 +20,8 @@ const checks = [
   [resources.includes("Calculadora NumWorks en línea"), "calculadora NumWorks"],
   [resources.includes("Equilibrio de Wardrop en GNU Octave"), "código de Wardrop"],
   [resources.includes("no son formatos oficiales"), "aviso de hojas de campo"],
-  [softwareCatalog.includes("Versión 3.1.1"), "MacroNet Transport 3.1.1"],
-  [softwareCatalog.includes("Manual_MacroNet_Transport_v3.1.1.pdf"), "manual de MacroNet 3.1.1"],
+  [softwareCatalog.includes("Versión 3.3.2"), "MacroNet Transport 3.3.2"],
+  [softwareCatalog.includes("Manual_Integral_MacroNet_Transport_v3.3.2.pdf"), "manual de MacroNet 3.3.2"],
   [index.includes("transporte-urbano-ingenieria.blogspot.com"), "enlace al blog"],
 ];
 
@@ -30,7 +30,8 @@ for (const [ok, label] of checks) {
 }
 
 await stat(join(root, "assets", "media", "hero-intercambio.webp"));
-await stat(join(root, "software", "manuales", "Manual_MacroNet_Transport_v3.1.1.pdf"));
+await stat(join(root, "software", "manuales", "Manual_Integral_MacroNet_Transport_v3.3.2.pdf"));
+await stat(join(root, "software", "imagenes", "macronet-transport-3.3.2.png"));
 await stat(join(root, "recursos", "codigo", "wardrop.m"));
 await stat(join(root, "recursos", "imagenes", "wardrop-network.svg"));
 for (const file of await readdir(join(root, "assets", "media"))) {

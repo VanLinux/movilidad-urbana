@@ -13,22 +13,30 @@ if (archiveHero) {
       <p>Aplicaciones abiertas orientadas a la docencia, la investigación y el análisis de sistemas de transporte.</p>
     </div>
     <div class="software-owned-list">
-    <article class="software-owned-card">
-      <div class="software-owned-copy">
-        <span class="content-meta">Aplicación educativa · Código abierto · Versión 3.1.1</span>
-        <h3>MacroNet Transport</h3>
-        <p>Aplicación interactiva para estudiar y ejecutar el modelo clásico de transporte de cuatro etapas. La versión 3.1.1 incorpora guardado de proyectos .mnet, calibración estadística, nuevas funciones de fricción, asignación Todo-o-Nada y equilibrio de usuario de Wardrop, comparación de métodos y exportaciones ampliadas en CSV, GraphML y LaTeX.</p>
-        <dl class="software-facts">
-          <div><dt>Desarrollo</dt><dd>Héctor A. Benítez García</dd></div>
-          <div><dt>Alojamiento</dt><dd>Repositorio público en GitHub: VanLinux/macronet-transport</dd></div>
-          <div><dt>Compatibilidad</dt><dd>Disponible actualmente para GNU/Linux. Próximamente para Windows 11.</dd></div>
-        </dl>
-      </div>
-      <div class="software-owned-actions" aria-label="Recursos de MacroNet Transport">
-        <a class="button button-primary" href="/movilidad-urbana/software/manuales/Manual_MacroNet_Transport_v3.1.1.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF · 3.1.1 ↗</span></a>
-        <a class="button button-secondary" href="https://github.com/VanLinux/macronet-transport" target="_blank" rel="noreferrer">Ver código fuente <span aria-hidden="true">GitHub ↗</span></a>
-      </div>
-    </article>
+    <article class="software-owned-card software-owned-card-illustrated" id="macronet-transport">
+          <div class="software-owned-copy">
+            <span class="content-meta">Aplicación educativa · Código abierto · Versión 3.3.2</span>
+            <h3>MacroNet Transport</h3>
+            <p>Modelo educativo de transporte de cuatro etapas: generación y atracción, distribución, elección modal y asignación de viajes. Permite calibrar modelos, comparar escenarios tarifarios y analizar el equilibrio de Wardrop, con ejecución opcional de SUMO. Guarda proyectos y exporta resultados e informes LaTeX.</p>
+            <dl class="software-facts">
+              <div><dt>Desarrollo</dt><dd>Héctor A. Benítez García</dd></div>
+              <div><dt>Alojamiento</dt><dd>Repositorio público en GitHub: VanLinux/macronet-transport</dd></div>
+              <div><dt>Compatibilidad</dt><dd>Disponible actualmente para GNU/Linux. Próximamente para Windows 11.</dd></div>
+            </dl>
+          </div>
+          <div class="software-owned-side">
+            <figure class="software-preview">
+              <a href="/movilidad-urbana/software/imagenes/macronet-transport-3.3.2.png" target="_blank" rel="noreferrer" aria-label="Ampliar la imagen de MacroNet Transport">
+                <img src="/movilidad-urbana/software/imagenes/macronet-transport-3.3.2.png" alt="Vista ilustrativa de MacroNet Transport: generación de viajes, matriz origen-destino, participación modal y asignación en red" loading="lazy" />
+              </a>
+              <figcaption>Las cuatro etapas del transporte · ampliar imagen ↗</figcaption>
+            </figure>
+            <div class="software-owned-actions" aria-label="Recursos de MacroNet Transport">
+              <a class="button button-primary" href="/movilidad-urbana/software/manuales/Manual_Integral_MacroNet_Transport_v3.3.2.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF · 3.3.2 ↗</span></a>
+              <a class="button button-secondary" href="https://github.com/VanLinux/macronet-transport" target="_blank" rel="noreferrer">Ver código fuente <span aria-hidden="true">GitHub ↗</span></a>
+            </div>
+          </div>
+        </article>
     <article class="software-owned-card">
       <div class="software-owned-copy">
         <span class="content-meta">Aplicación educativa · Código abierto · Versión 2.0.0</span>
