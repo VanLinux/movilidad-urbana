@@ -57,24 +57,26 @@ if (archiveHero) {
     </article>
         <article class="software-owned-card software-owned-card-illustrated" id="walksim-mobility">
           <div class="software-owned-copy">
-            <span class="content-meta">Aplicación educativa · Código abierto · Versión 3.4.0</span>
+            <span class="content-meta">Aplicación educativa · Código abierto · Versión 3.4.2</span>
             <h3>WalkSim Mobility</h3>
-            <p>Herramienta para analizar movilidad peatonal y senderos compartidos. Integra cálculos de operación y nivel de servicio, comparación de escenarios y microsimulación con Eclipse SUMO. Permite estudiar corredores, accesos, plazas y cruces semaforizados, guardar proyectos y exportar resultados en CSV y reportes LaTeX.</p>
+            <p>Analiza corredores peatonales, accesos, plazas, cruces y senderos compartidos. Compara escenarios, evalúa el nivel de servicio y realiza microsimulaciones con SUMO; guarda tus proyectos y exporta resultados e informes LaTeX.</p>
             <dl class="software-facts">
               <div><dt>Desarrollo</dt><dd>Héctor Alonso Benítez García</dd></div>
               <div><dt>Alojamiento</dt><dd>Repositorio público en GitHub: VanLinux/walksim-mobility</dd></div>
-              <div><dt>Compatibilidad</dt><dd>GNU/Linux y Windows mediante Python 3.11+ y Eclipse SUMO.</dd></div>
+              <div><dt>Compatibilidad</dt><dd>GNU/Linux y Windows 11 x64. Instalador de Windows con SUMO incluido.</dd></div>
             </dl>
           </div>
           <div class="software-owned-side">
             <figure class="software-preview">
-              <a href="/movilidad-urbana/software/imagenes/walksim-mobility-3.4.0.png" target="_blank" rel="noreferrer" aria-label="Ampliar la imagen de WalkSim Mobility">
-                <img src="/movilidad-urbana/software/imagenes/walksim-mobility-3.4.0.png" alt="Vista ilustrativa de WalkSim Mobility con parámetros de plaza, matriz origen-destino y mapa de densidad peatonal" width="1491" height="1055" loading="lazy" />
+              <a href="/movilidad-urbana/software/imagenes/walksim-mobility-3.4.2.png" target="_blank" rel="noreferrer" aria-label="Ampliar la imagen de WalkSim Mobility">
+                <img src="/movilidad-urbana/software/imagenes/walksim-mobility-3.4.2.png" alt="Ilustración de WalkSim Mobility: corredor peatonal, mapa de densidad e indicadores de operación" width="1672" height="941" loading="lazy" />
               </a>
-              <figcaption>Plaza y flujos cruzados · ampliar imagen ↗</figcaption>
+              <figcaption>Análisis y simulación peatonal · imagen ilustrativa ↗</figcaption>
             </figure>
             <div class="software-owned-actions" aria-label="Recursos de WalkSim Mobility">
-              <a class="button button-primary" href="/movilidad-urbana/software/manuales/Manual_Usuario_WalkSim_Mobility_3_4_Ilustrado.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF · 3.4.0 ↗</span></a>
+              <a class="button button-primary" href="https://github.com/VanLinux/walksim-mobility/releases/download/windows-v3.4.2/WalkSim-Mobility-3.4.2-Windows-x64-Setup.exe">Descargar para Windows <span aria-hidden="true">EXE ↓</span></a>
+              <small style="color:var(--muted);line-height:1.5;font-size:.7rem">Windows 11 x64 · 199 MB · SUMO incluido. Instalador sin firma digital. No incluye compilador LaTeX.</small>
+              <a class="button button-secondary" href="/movilidad-urbana/software/manuales/Manual_Usuario_WalkSim_Mobility_v3_4_2.pdf" target="_blank" rel="noreferrer">Consultar manual <span aria-hidden="true">PDF · 3.4.2 ↗</span></a>
               <a class="button button-secondary" href="https://github.com/VanLinux/walksim-mobility" target="_blank" rel="noreferrer">Ver código fuente <span aria-hidden="true">GitHub ↗</span></a>
             </div>
           </div>
