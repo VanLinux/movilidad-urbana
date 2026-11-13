@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ejercicio de análisis peatonal basado en el HCM 7 para contrastar los cálculos a mano con los resultados de WalkSim Mobility.">
+    <meta name="theme-color" content="#111111">
+    <title>Diagnóstico y mejora peatonal de un centro de transferencia | Prácticas de transporte no motorizado</title>
+    <link rel="stylesheet" href="/movilidad-urbana/styles.css">
+    <script src="/movilidad-urbana/script.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="/movilidad-urbana/" aria-label="Ir al inicio">
+        <span class="brand-code">HABG/</span>
+        <span>movilidad urbana</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span>menú</span><span aria-hidden="true">+</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal"><a href="/movilidad-urbana/">Inicio</a><a href="/movilidad-urbana/articulos/">Artículos</a><a href="/movilidad-urbana/clases/">Clases</a><a href="/movilidad-urbana/videos/">Videos</a><a href="/movilidad-urbana/biblioteca/">Biblioteca</a><a href="/movilidad-urbana/recursos/">Recursos</a><a href="/movilidad-urbana/software/">Software</a></nav>
+    </header>
+    <main id="contenido" class="inner-page practice-page">
+      <header class="archive-hero practice-hero">
+        <div class="page-shell">
+          <a class="practice-back" href="/movilidad-urbana/#practica-walksim">← Volver a las prácticas</a>
+          <p class="kicker">Transportes No Motorizados · P05</p>
+          <h1>Diagnóstico y mejora peatonal de un centro de transferencia</h1>
+          <p class="content-meta">Práctica · 1 h 30 min · Básico</p>
+          <div class="practice-actions">
+            <a class="button button-primary" href="/movilidad-urbana/practicas/archivos/WalkSim_Practica_Integral_Basica.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="/movilidad-urbana/practicas/archivos/WalkSim_P05_Datos_CSV.zip" download>Descargar CSV (ZIP) <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="/movilidad-urbana/software/#walksim-mobility">Ir a WalkSim Mobility <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </header>
+      <div class="page-shell practice-detail">
+        <div class="prose-content practice-detail-copy">
+          <h2>Objetivo</h2>
+          <p>Evalúa el corredor de acceso del Centro de Transferencia Oriente, un caso ficticio con datos sintéticos. Aplica los criterios del HCM 7 para aceras y analiza si una ampliación mejora las condiciones de circulación peatonal.</p>
+          <p>La sesión de 1 h 30 min se centra en el escenario base (W1) y la alternativa de ampliación (W3). La guía integral propone tres sesiones e incluye microsimulación y otros ejercicios para continuar.</p>
+          <h2>Desarrollo de la actividad</h2>
+          <ol>
+            <li><strong>Cálculos a mano.</strong> Usa los aforos para estimar la demanda de diseño. Calcula el ancho efectivo, el flujo por unidad de ancho, la densidad y el espacio por peatón. Determina con este último el nivel de servicio (LOS) de la acera.</li>
+            <li><strong>Comparación con WalkSim Mobility.</strong> Reproduce W1 y W3 en el módulo Walkway, manteniendo la misma demanda y velocidad. Contrasta los indicadores con tus cálculos y explica cómo el cambio de ancho afecta el espacio por peatón y el LOS.</li>
+            <li><strong>Informe técnico.</strong> Presenta los datos y supuestos, la memoria de cálculo y una tabla que compare ambos escenarios y métodos. Explica las diferencias que encuentres y justifica tu recomendación para el corredor.</li>
+          </ol>
+          <h2>Datos de entrada opcionales</h2>
+          <p>El ZIP contiene 13 archivos CSV opcionales. Descomprímelo e importa el archivo que corresponda a cada módulo, o captura los mismos datos a mano desde las tablas del PDF.</p>
+          <p>Si vas a importar los CSV, guarda antes una copia del proyecto .wksim: según el módulo, la importación puede sustituir las alternativas que ya estén cargadas.</p>
+          <h2>Dónde encontrar el software</h2>
+          <p>En Software → «Software desarrollado por mí» → «WalkSim Mobility» encontrarás el manual, el código fuente y el instalador para Windows. Para comparar los cálculos analíticos de Walkway no necesitas ejecutar SUMO.</p>
+        </div>
+        <aside class="practice-material" aria-labelledby="guia-ejercicio">
+          <p class="kicker">Material de trabajo</p>
+          <h2 id="guia-ejercicio">Guía del ejercicio</h2>
+          <a class="practice-cover" href="/movilidad-urbana/practicas/archivos/WalkSim_Practica_Integral_Basica.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir la guía del ejercicio en PDF">
+            <img src="/movilidad-urbana/practicas/archivos/diagnostico-peatonal-portada.webp" alt="Portada de la práctica integral básica de WalkSim Mobility" width="400" height="518">
+          </a>
+          <p class="content-meta">PDF · 18 páginas</p>
+          <a class="practice-download" href="/movilidad-urbana/practicas/archivos/WalkSim_Practica_Integral_Basica.pdf" download>Descargar PDF <span aria-hidden="true">↓</span></a>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer page-shell">
+      <div>
+        <strong>Héctor A. Benítez García</strong>
+        <span>Ingeniería · investigación · docencia</span>
+      </div>
+      <p>Ciudad de México · 2026</p>
+      <div class="footer-links">
+        <a href="https://transporte-urbano-ingenieria.blogspot.com/" target="_blank" rel="noreferrer">blog original ↗</a>
+        <a href="#top">volver arriba ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

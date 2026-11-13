@@ -1245,8 +1245,8 @@ p {
 @media (max-width: 760px) { .software-owned-card-illustrated { grid-template-columns: 1fr; } }
 
 
-/* Práctica de macrosimulación */
-#practica-macronet { scroll-margin-top: 92px; }
+/* Fichas de prácticas */
+.practice-card[id] { scroll-margin-top: 92px; }
 .practice-hero { padding-block: clamp(36px, 6vw, 68px); }
 .practice-back { display: inline-block; margin-bottom: 24px; color: var(--muted); font-size: .8rem; }
 .practice-back:hover, .practice-download:hover { text-decoration: underline; }
@@ -1269,5 +1269,5 @@ p {
   .practice-material { width: min(100%, 340px); }
 }
 @media (min-width: 1081px) {
-  #practicas .practice-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  #practicas .practice-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
